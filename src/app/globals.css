@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme{
+  --breakpoint-sm: 400px;
+  --breakpoint-md: 400px;
+  --breakpoint-lg: 920px;
+  --breakpoint-xl: 1200px;
+  /* Primary Colors */
+  --color-primary: #683C86; /* Primary/Purple 3 */
+  --color-primary-tint: #C4ACF0; /* Primary/Purple 1 */
+  --color-primary-light: #F4EEFE; /* Lights/Purple */
+  --color-primary-foreground:#FFFFFF;
+
+  /* Secondary Blue 1 */
+  --color-secondary: #5E92F8;
+  --color-secondary-tint: #BFD3FC;
+  --color-secondary-light: #EFF4FE;
+
+  /* Secondary Blue 2 */
+  --color-blue: #01B0ED;
+  --color-blue-tint: #B1E6F9;
+  --color-blue-light: #E6F7FD;
+
+  /* Teal */
+  --color-teal: #71C6BF;
+  --color-teal-tint: #C6E8E5;
+  --color-teal-light: #F1F9F9;
+
+  /* Green */
+  --color-green: #46B87C;
+  --color-green-tint: #B5E3CB;
+  --color-green-light: #EBF6F0;
+
+  /* Yellow */
+  --color-yellow: #F89B4C;
+  --color-yellow-tint: #FCD7B7;
+  --color-yellow-light: #FEF5ED;
+
+  /* Pink */
+  --color-pink: #FA9ABB;
+  --color-pink-tint: #FDD7E4;
+  --color-pink-light: #FFF5F8;
+
+  /* Watermelon */
+  --color-watermelon: #EF596B;
+  --color-watermelon-tint: #F7ACB5;
+  --color-watermelon-light: #FCDEE1;
+
+  /* Charcoal */
+  --color-charcoal: #456877;
+  --color-charcoal-tint: #8FA4AD;
+  --color-charcoal-light: #DAE1E4;
+
+  /* Font and Utility Colors */
+  --color-font: #687184;
+  --color-navy: #27344F;
+
+  --color-off-white: #F4EAE2;
+  --color-off-white-2: #F1F2EF;
+
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
