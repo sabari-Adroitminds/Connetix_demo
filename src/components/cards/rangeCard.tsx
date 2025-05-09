@@ -32,11 +32,12 @@ const RangeCard: React.FC<RangeCardProps> = ({
 
 
   return (
-    <div className="flex flex-col items-center text-center w-[490px] h-[612px] mx-auto group relative">
+    <div className='w-[289px]  md:w-[490px] md:h-[612px]'>
+    <div className="flex flex-col items-center text-center  mx-auto group relative">
       {/* Diamond background */}
       <div
         className={clsx(
-          'absolute top-16 left-1/2 -translate-x-1/2 w-[278.6px] h-[278.6px] rotate-45 z-0 transition-all duration-500',
+          'absolute top-16 left-1/2 -translate-x-1/2 md:w-[278.6px] md:h-[278.6px]  w-[183.49px] h-[183.49px] rotate-45 z-0 transition-all duration-500',
           diamondColor,
           'group-hover:-rotate-45', // Add a hover effect on diamond rotation
           diamondHoverColor
@@ -44,7 +45,7 @@ const RangeCard: React.FC<RangeCardProps> = ({
       />
 
       {/* Image container */}
-      <div className="relative w-[490px] h-[428px] z-10 group-hover:scale-105 transition-transform duration-500">
+      <div className="relative top-5 md:top-0 md:w-[490px] md:h-[428px]  w-[289px] h-[283px] z-10 group-hover:scale-105 transition-transform duration-500">
         <Image
           src={image}
           alt={title}
@@ -69,6 +70,7 @@ const RangeCard: React.FC<RangeCardProps> = ({
       >
         {buttonLabel}
       </button>
+      </div>
     </div>
   );
 };

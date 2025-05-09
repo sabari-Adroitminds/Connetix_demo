@@ -2,17 +2,19 @@
 
 import Image, { StaticImageData } from 'next/image'
 import clsx from 'clsx'
+import { Button } from '@/components/ui/button'
 
 interface HeroSliderProps {
   title: string
   subtitle?: string
   description: string
+  descriptionForSmallScreens: string
   buttonText: string
   bgColorClass?: string
   titleColorClass?: string
   subtitleColorClass?: string
   descriptionColorClass?: string
-  buttonColorClass?: string
+  buttonColorClass: 'default' | 'primary' | 'primaryTint' | 'primaryLight' | 'secondary' | 'secondaryTint' | 'secondaryLight' | 'blue' | 'blueTint' | 'blueLight' | 'teal' | 'tealTint' | 'tealLight' | 'yellow' | 'yellowTint' | 'yellowLight' | 'pink' | 'pinkTint' | 'pinkLight' | 'watermelon' | 'watermelonTint' | 'watermelonLight' | 'charcoal' | 'charcoalTint' | 'charcoalLight' | 'destructive'
   buttonHoverColorClass?: string
   image: StaticImageData
 }
@@ -21,48 +23,54 @@ export default function HeroSlider({
   title,
   subtitle,
   description,
+    descriptionForSmallScreens,
   buttonText,
   bgColorClass = 'bg-primary-light',
   titleColorClass = 'text-navy',
   subtitleColorClass = 'text-primary',
   descriptionColorClass = 'text-navy',
-  buttonColorClass = 'bg-primary',
-  buttonHoverColorClass = 'hover:bg-primary-tint',
+  buttonColorClass = 'primary',
+
   image
 }: HeroSliderProps) {
   return (
     <div className={clsx(bgColorClass, 'w-full')}>
-      <div className="flex flex-col md:flex-row items-center justify-around md:justify-between ">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-around md:justify-between ">
         {/* Text Section */}
-        <div className="min-w-[421px] px-20 flex flex-col items-start justify-center gap-6 md:text-left mb-8 md:mb-0">
+        <div  className="flex flex-12/12 md:flex-4/12 items-center justify-center   md:w-[100%] w-[366px]  h-[273px] p-[30px] align-center ">
+        <div className="w-[421px] flex flex-col items-center md:items-start justify-center gap-6 md:text-left mb-8 md:mb-0">
           {subtitle && (
             <p className={clsx('text-sm font-medium hidden md:block', subtitleColorClass)}>
               {subtitle}
             </p>
           )}
-          <h2 className={clsx('text-3xl md:text-5xl font-bold', titleColorClass)}>
-            {title}
+          <h2 className={clsx('text=[32px]/[40px] md:text-[70px]/[75px] l font-[300px]', titleColorClass)}>
+            {title} 
           </h2>
-          <p className={clsx('text-base md:text-lg max-w-md', descriptionColorClass)}>
+          <p className={clsx('text-[14px]  md:text-lg  hidden md:block', descriptionColorClass)}>
             {description}
           </p>
-          <button
+           <p className={clsx('text-[14px]  md:text-lg text-center  md:hidden block', descriptionColorClass)}>
+            {descriptionForSmallScreens}
+          </p>
+          <Button
+          variant={buttonColorClass}
             className={clsx(
-              'text-white px-6 py-3 rounded-full font-semibold transition-colors',
-              buttonColorClass,
-              buttonHoverColorClass
+         
+              ' h-[50px]'
             )}
           >
             {buttonText}
-          </button>
+          </Button>
+        </div>
         </div>
 
         {/* Image Section */}
-        <div className="w-[1058px] h-[851px] hidden md:block">
+        <div className=" flex-8/12 md:w-[1058px] md:h-[851px]  w-[366px] h-[380px] ">
           <Image
             src={image}
             alt={title}
-            className="object-cover w-full h-full"
+            className="object-cover md:w-full md:h-full w-[366px] h-[380px]"
             priority
           />
         </div>
