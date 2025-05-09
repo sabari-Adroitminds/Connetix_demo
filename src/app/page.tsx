@@ -76,7 +76,7 @@ export default function Home() {
 
 
    <Carousel itemImages={itemImages} items={items} buttonColors={buttonColors} buttonBorderColors={buttonBorders} />
-    <HeroSlider
+    {/* <HeroSlider
       title="Where play & learning connect"
       subtitle="Award winning educational toy"
       description="Connetix inspires open-ended play and brings imagination to life. Unlock creativity and build BIGGER with strong magnets, vibrant colours and stunning clear refractions."
@@ -90,7 +90,7 @@ export default function Home() {
       buttonHoverColorClass="hover:bg-primary-tint"
       image={heroImage}
       key={1}
-    />
+    /> */}
 
 
     <div className=" scroll-auto flex p-10 gap-4 overflow-x-auto">
@@ -151,13 +151,7 @@ export default function Home() {
         isNew={true}
         reviews={143}
       />
-        <ProductCard
-        title="Rainbow Creative Pack 102 pc"
-        price="$169.00 AU"
-        imageUrl={testImage } // replace with actual image path
-        isNew={true}
-        reviews={143}
-      />
+     
       </div>
 
 
