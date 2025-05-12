@@ -2,7 +2,7 @@
 
 @theme{
   --breakpoint-sm: 400px;
-  --breakpoint-md: 400px;
+  --breakpoint-md: 640px;
   --breakpoint-lg: 920px;
   --breakpoint-xl: 1200px;
   /* Primary Colors */
