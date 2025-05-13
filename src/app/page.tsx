@@ -16,6 +16,7 @@ import { BlogCard } from "@/components/cards/BlogCard";
 
 import CarouselSlider, { CarouselSliderItem } from "@/components/common/CarouselSlider";
 import { Carousel, CarouselContent, CarouselItem, CarouselScrollbar } from "@/components/common/carousle";
+import TestimonialCard from "@/components/cards/TestimonialCard";
 const itemImages=[heroImage, hero1Image, hero2Image]
 const items = [
     <HeroSlider
@@ -79,7 +80,12 @@ const Card = ({ text }: { text: string }) => (
   <div className="bg-blue-100 rounded-md p-4 text-sm w-[400px] mb-10">{text}</div>
 );
 
-  const slides = Array.from({ length: 10}, (_, i) => <Card key={i} text={`Card ${i + 1}`} />);
+  const slides = Array.from({ length: 10 }, (_, i) => (<TestimonialCard key={i}
+    name="Wendy, T"
+    location="United Kingdom"
+    review="I love how educational they are too. We’ve been learning shapes and how to mix primary colours to make other colours. Instagram has also provided endless ideas of ways to play. Best money we ever spent on a toy."
+    rating={5}
+  />));
   
   return (
     <div className="">
@@ -98,7 +104,7 @@ const Card = ({ text }: { text: string }) => (
 
 
 
-      <Carousel className="bg-green p-4">
+      <Carousel className=" p-4">
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
@@ -220,6 +226,11 @@ const Card = ({ text }: { text: string }) => (
         author="Connetix"
       />
     </div>
+
+
+
+
+
 {/*    
         <Button variant={'primary'} >
       test

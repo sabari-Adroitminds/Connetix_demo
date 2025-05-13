@@ -223,12 +223,16 @@ function CarouselScrollbar({
   previousLabel = 'Previous',
   nextLabel = 'Next',
   label = 'Carousel scrollbar',
+  buttonColors='bg-white',
+  scrollbarColors='bg-primary',
   ...props
 }: ComponentPropsWithoutRef<'div'> & {
   colorScheme?: 'light' | 'dark';
   previousLabel?: string;
   nextLabel?: string;
   label?: string;
+    buttonColors?: string;
+    scrollbarColors?:string;
 }) {
   const { api, scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel();
   const [progress, setProgress] = useState(0);
@@ -297,10 +301,13 @@ function CarouselScrollbar({
           dark: 'text-[var(--carousel-dark-button,hsl(var(--background)))]',
         }[colorScheme],
         'h-[40px]',
+        'm-12',
         className
       )}
     >
-      <div className='relative w-[40px] h-[40px] bg-primary align-middle rotate-45 rounded-[10%]'>
+      <div className={clsx('relative w-[40px] h-[40px]  align-middle rotate-45 border-[1px] border-font  rounded-[10%]',
+        buttonColors,
+      )}>
         <div className=" -rotate-45  ">
       
       <button
@@ -345,7 +352,7 @@ function CarouselScrollbar({
             'pointer-events-none absolute h-[2px] rounded-full transition-all ease-out',
             {
               light: 'bg-[var(--carousel-light-scrollbar,hsl(var(--foreground)))]',
-              dark: 'bg-black',
+              dark: scrollbarColors,
             }[colorScheme]
           )}
           style={{
@@ -354,7 +361,9 @@ function CarouselScrollbar({
           }}
         />
       </div>
-      <div className='relative w-[40px] h-[40px] bg-primary align-middle rotate-45   rounded-[10%]'>
+      <div className={clsx('relative w-[40px] h-[40px]  align-middle rotate-45 border-[1px] border-font  rounded-[10%]',
+buttonColors,
+      )}>
         <div className=" -rotate-45  ">
           <button
             className='absolute -left-2.5 top-0.5'
