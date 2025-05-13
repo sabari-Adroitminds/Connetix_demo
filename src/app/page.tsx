@@ -14,7 +14,7 @@ import becomeImage1 from '../../public/images/become1.png';
 import PortalLandscapeCard from "@/components/cards/PortalLandscapeCard";
 import { BlogCard } from "@/components/cards/BlogCard";
 
-import CarouselSlider from "@/components/common/CarouselSlider";
+import CarouselSlider, { CarouselSliderItem } from "@/components/common/CarouselSlider";
 import { Carousel, CarouselContent, CarouselItem, CarouselScrollbar } from "@/components/common/carousle";
 const itemImages=[heroImage, hero1Image, hero2Image]
 const items = [
@@ -88,16 +88,16 @@ const Card = ({ text }: { text: string }) => (
 
    <CarouselSlider  buttonColors={buttonColors} buttonBorderColors={buttonBorders} >
       {items.map((item, index) => (
-          <CarouselItem key={index} >
+        <CarouselSliderItem key={index} >
             {item}
-          </CarouselItem>
+        </CarouselSliderItem>
         ))}
       </CarouselSlider>
       {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
 
-      
+
       <Carousel className="bg-green p-4">
         <CarouselContent>
           {slides.map((slide, index) => (

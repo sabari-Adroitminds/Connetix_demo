@@ -18,7 +18,7 @@ export default function CarouselSlider({
    children ,
   buttonColors,
   buttonBorderColors,
-  autoPlayInterval = 5000,
+  autoPlayInterval = 2000,
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'center' },
@@ -46,7 +46,7 @@ export default function CarouselSlider({
   }, [emblaApi])
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative my-4">
       {/* Carousel Viewport */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
@@ -82,7 +82,7 @@ export const CarouselSliderItem = ({
 }) => {
   return (
     <div
-      className="embla__slide px-4 md:h-[851px] flex items-center justify-center rounded-lg"
+      className="embla__slide px-2 md:h-[851px] flex items-center justify-center rounded-lg"
     >
       <div className="rounded-lg shadow-lg overflow-hidden">
         {children}
