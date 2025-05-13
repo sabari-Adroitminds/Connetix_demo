@@ -84,20 +84,7 @@ const Card = ({ text }: { text: string }) => (
   return (
     <div className="">
 {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
- <Carousel className="bg-green p-4">
-          <CarouselContent>
-              {slides.map((slide, index) => (
-                  <CarouselItem key={index}>
-                      <p>{slide}</p>
-                  </CarouselItem>
-              ))}
-          </CarouselContent>
-        
-          {/* <CarouselButtons nextLabel="Next" previousLabel="Previous" /> */}
-            <CarouselScrollbar />
-      </Carousel>
 
-      {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
    <CarouselSlider  buttonColors={buttonColors} buttonBorderColors={buttonBorders} >
       {items.map((item, index) => (
@@ -108,6 +95,23 @@ const Card = ({ text }: { text: string }) => (
       </CarouselSlider>
       {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
+
+
+      
+      <Carousel className="bg-green p-4">
+        <CarouselContent>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <p>{slide}</p>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        {/* <CarouselButtons nextLabel="Next" previousLabel="Previous" /> */}
+        <CarouselScrollbar />
+      </Carousel>
+
+      {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
     {/* <HeroSlider
       title="Where play & learning connect"
       subtitle="Award winning educational toy"
