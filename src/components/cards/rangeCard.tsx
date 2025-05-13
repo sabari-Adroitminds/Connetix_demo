@@ -1,8 +1,9 @@
-'use client';
+
 
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import clsx from 'clsx';
+import { Button } from '../ui/button';
 
 interface RangeCardProps {
   image: StaticImageData;
@@ -59,7 +60,7 @@ const RangeCard: React.FC<RangeCardProps> = ({
       <p className="text-sm text-gray-600 mt-2 z-10">{description}</p>
 
       {/* Button */}
-      <button
+      <Button
         className={clsx(
           'mt-6 font-semibold py-2 px-4 rounded-full transition-colors z-10',
           buttonColor,
@@ -69,7 +70,7 @@ const RangeCard: React.FC<RangeCardProps> = ({
         )}
       >
         {buttonLabel}
-      </button>
+        </Button>
       </div>
     </div>
   );

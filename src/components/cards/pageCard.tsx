@@ -1,4 +1,4 @@
-'use client'; // Optional if using in app router (Next.js 13+)
+
 
 import Image, { StaticImageData } from 'next/image';
 import { Button } from '../ui/button';
