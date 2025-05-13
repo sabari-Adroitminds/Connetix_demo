@@ -2,7 +2,6 @@
 import RangeCard from "@/components/cards/rangeCard";
 import testImage from '../../public/images/test.png';
 
-import Carousel from "@/components/common/carousel";
 import HeroSlider from "@/components/home/section-One/component/HeroSlider";
 import heroImage from '../../public/images/hero.jpg';
 import hero1Image from '../../public/images/hero2.png';
@@ -14,6 +13,9 @@ import PageCard from "@/components/cards/pageCard";
 import becomeImage1 from '../../public/images/become1.png';
 import PortalLandscapeCard from "@/components/cards/PortalLandscapeCard";
 import { BlogCard } from "@/components/cards/BlogCard";
+
+import CarouselSlider from "@/components/common/CarouselSlider";
+import { Carousel, CarouselContent, CarouselItem, CarouselScrollbar } from "@/components/common/carousle";
 const itemImages=[heroImage, hero1Image, hero2Image]
 const items = [
     <HeroSlider
@@ -70,12 +72,42 @@ const items = [
 const buttonColors = ['bg-primary-tint', 'bg-secondary-tint', 'bg-yellow-tint']
 const buttonBorders = ['border-4 border-primary', 'border-4 border-secondary', 'border-4 border-yellow']
 
+
 export default function Home() {
+
+const Card = ({ text }: { text: string }) => (
+  <div className="bg-blue-100 rounded-md p-4 text-sm w-[400px] mb-10">{text}</div>
+);
+
+  const slides = Array.from({ length: 10}, (_, i) => <Card key={i} text={`Card ${i + 1}`} />);
+  
   return (
     <div className="">
+{/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
+ <Carousel className="bg-green p-4">
+          <CarouselContent>
+              {slides.map((slide, index) => (
+                  <CarouselItem key={index}>
+                      <p>{slide}</p>
+                  </CarouselItem>
+              ))}
+          </CarouselContent>
+        
+          {/* <CarouselButtons nextLabel="Next" previousLabel="Previous" /> */}
+            <CarouselScrollbar />
+      </Carousel>
 
+      {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-   <Carousel itemImages={itemImages} items={items} buttonColors={buttonColors} buttonBorderColors={buttonBorders} />
+   <CarouselSlider  buttonColors={buttonColors} buttonBorderColors={buttonBorders} >
+      {items.map((item, index) => (
+          <CarouselItem key={index} >
+            {item}
+          </CarouselItem>
+        ))}
+      </CarouselSlider>
+      {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
+
     {/* <HeroSlider
       title="Where play & learning connect"
       subtitle="Award winning educational toy"

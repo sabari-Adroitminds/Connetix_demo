@@ -34,7 +34,7 @@ export default function HeroSlider({
   image
 }: HeroSliderProps) {
   return (
-    <div className={clsx(bgColorClass, 'w-full')}>
+    <div className={clsx(bgColorClass, 'w-full rounded-xl')}>
       <div className="flex flex-col-reverse md:flex-row items-center justify-around md:justify-between ">
         {/* Text Section */}
         <div  className="flex flex-12/12 md:flex-4/12 items-center justify-center   md:w-[100%] w-[366px]  h-[273px] p-[30px] align-center ">
@@ -66,11 +66,11 @@ export default function HeroSlider({
         </div>
 
         {/* Image Section */}
-        <div className=" flex-8/12 md:w-[1058px] md:h-[851px]  w-[366px] h-[380px] ">
+        <div className=" flex-8/12 md:w-[1058px] md:h-[851px]  w-[366px] h-[380px] rounded-xl ">
           <Image
             src={image}
             alt={title}
-            className="object-cover md:w-full md:h-full w-[366px] h-[380px]"
+            className="object-cover md:w-full md:h-full w-[366px] h-[380px] rounded-r-xl "
             priority
           />
         </div>
