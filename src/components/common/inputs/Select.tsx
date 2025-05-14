@@ -6,6 +6,7 @@ import { Check, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Controller, useFormContext, FieldValues, FieldPath } from "react-hook-form";
+import clsx from 'clsx';
 
 export interface SelectProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
   label?: string;
@@ -19,6 +20,7 @@ export interface SelectProps extends React.ComponentPropsWithoutRef<typeof Selec
   name?: string;
   id?: string;
   className?: string;
+  containerClassName?:string
 }
 
 const Select = React.forwardRef<
@@ -35,6 +37,7 @@ const Select = React.forwardRef<
     isRequired = false,
     focusColor = 'purple-500',
     placeholder = 'Select an option',
+    containerClassName = '',
     name,
     ...props 
   }, ref) => {
@@ -51,7 +54,7 @@ const Select = React.forwardRef<
           name={name as FieldPath<FieldValues>}
           control={formContext.control}
           render={({ field, fieldState }) => (
-            <div className="grid items-center gap-2.5">
+            <div className={clsx("grid items-center gap-2.5",containerClassName)}>
               {label && (
                 <Label htmlFor={selectId} className="text-base font-medium">
                   {label}{isRequired && <span className="text-black">*</span>}
