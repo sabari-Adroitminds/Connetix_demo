@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
+import { FC } from "react";
 
 type PortalLandscapeCardProps = {
   title: string;
@@ -8,12 +9,12 @@ type PortalLandscapeCardProps = {
   imageSrc: string | StaticImageData;
 };
 
-const PortalLandscapeCard = ({
+const PortalLandscapeCard: FC<PortalLandscapeCardProps> = ({
   title,
   description,
   buttonText,
   imageSrc,
-}: PortalLandscapeCardProps) => {
+}) => {
   return (
     <div className="relative w-[602px] h-[198px] flex rounded-2xl border border-[#27344F26] bg-white overflow-hidden">
       <div className="absolute left-4 top-4 w-[220px] h-[170px] rounded-xl overflow-hidden ">

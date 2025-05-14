@@ -1,5 +1,6 @@
-import Image, { StaticImageData } from 'next/image';
-import { Button } from '../ui/button';
+import Image, { StaticImageData } from "next/image";
+import { Button } from "../ui/button";
+import { FC } from "react";
 
 interface AddOnCardProps {
   imageSrc: string | StaticImageData;
@@ -8,7 +9,12 @@ interface AddOnCardProps {
   price: string;
 }
 
-const AddOnCard: React.FC<AddOnCardProps> = ({ imageSrc, title, quantity, price }) => {
+const AddOnCard: FC<AddOnCardProps> = ({
+  imageSrc,
+  title,
+  quantity,
+  price,
+}) => {
   return (
     <div className="flex items-center justify-between border border-[#F0ECF3] rounded-xl p-4 w-full max-w-md bg-white shadow-sm">
       <div className="flex items-center gap-4">

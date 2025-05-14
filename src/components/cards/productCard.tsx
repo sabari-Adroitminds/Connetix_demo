@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import { Button } from '../ui/button';
+import { FC } from 'react';
 
 type ProductCardProps = {
   title: string;
@@ -9,7 +10,7 @@ type ProductCardProps = {
   reviews: number;
 };
 
-export default function ProductCard({ title, price, imageUrl, isNew = false, reviews }: ProductCardProps) {
+const ProductCard: FC<ProductCardProps> = ({ title, price, imageUrl, isNew = false, reviews }) => {
   return (
     <div className=" w-[176px] md:w-[496px]  rounded-xl pb-2  text-center relative bg-white">
 
@@ -44,3 +45,5 @@ export default function ProductCard({ title, price, imageUrl, isNew = false, rev
     </div>
   );
 }
+
+export default ProductCard;

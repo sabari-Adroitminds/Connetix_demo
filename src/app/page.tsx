@@ -1,4 +1,4 @@
-import RangeCard from "@/components/cards/rangeCard";
+import RangeCard from "@/components/cards/RangeCard";
 import testImage from "../../public/images/test.png";
 
 import HeroSlider from "@/components/home/section-One/component/HeroSlider";
@@ -11,20 +11,19 @@ import AddOnCard from "@/components/cards/SmallAddOnCard";
 
 import becomeImage1 from "../../public/images/become1.png";
 import PortalLandscapeCard from "@/components/cards/PortalLandscapeCard";
-import { BlogCard } from "@/components/cards/BlogCard";
 
-import CarouselSlider, {
-  CarouselSliderItem,
-} from "@/components/common/CarouselSlider";
+import Slider from "@/components/common/Carousel/Slider";
+import SliderItem from "@/components/common/Carousel/Slider/SliderItem";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselScrollbar,
-} from "@/components/common/carousle";
+} from "@/components/common/Carousel/CardSlider";
 import TestimonialCard from "@/components/cards/TestimonialCard";
-import ProductCard from "@/components/cards/productCard";
-import PageCard from "@/components/cards/pageCard";
+import BlogCard from "@/components/cards/BlogCard";
+import ProductCard from "@/components/cards/ProductCard";
+import PageCard from "@/components/cards/PageCard";
 
 const items = [
   <HeroSlider
@@ -82,10 +81,9 @@ const buttonBorders = [
 ];
 
 export default function Home() {
-
   const slides = Array.from({ length: 10 }, (_, i) => (
     <TestimonialCard
-      key={i}
+      key={`testimonial-${i}`}
       name="Wendy, T"
       location="United Kingdom"
       review="I love how educational they are too. We’ve been learning shapes and how to mix primary colours to make other colours. Instagram has also provided endless ideas of ways to play. Best money we ever spent on a toy."
@@ -94,29 +92,22 @@ export default function Home() {
   ));
 
   return (
-    <div className="">
+    <div className="min-h-screen max-w-screen overflow-hidden p-6">
       {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-      <CarouselSlider
-        buttonColors={buttonColors}
-        buttonBorderColors={buttonBorders}
-      >
+      <Slider buttonColors={buttonColors} buttonBorderColors={buttonBorders}>
         {items.map((item, index) => (
-          <CarouselSliderItem key={index}>{item}</CarouselSliderItem>
+          <SliderItem key={`slider-item-${index}`}>{item}</SliderItem>
         ))}
-      </CarouselSlider>
+      </Slider>
       {/* -------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-      <Carousel className=" p-4">
+      <Carousel className="p-4">
         <CarouselContent>
           {slides.map((slide, index) => (
-            <CarouselItem key={index}>
-              <p>{slide}</p>
-            </CarouselItem>
+            <CarouselItem key={index}>{slide}</CarouselItem>
           ))}
         </CarouselContent>
-
-        {/* <CarouselButtons nextLabel="Next" previousLabel="Previous" /> */}
         <CarouselScrollbar />
       </Carousel>
 
@@ -137,55 +128,57 @@ export default function Home() {
       key={1}
     /> */}
 
-      <div className=" scroll-auto flex p-10 gap-4 overflow-x-auto">
-        <RangeCard
-          image={testImage}
-          title="Rainbow Tiles"
-          description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
-          buttonLabel="Shop range"
-          diamondColor="bg-purple-100"
-          diamondHoverColor="group-hover:bg-purple-900"
-          buttonColor="bg-purple-300"
-          buttonHoverColor="group-hover:bg-purple-400"
-          buttonTextColor="text-purple-900"
-        />
+      <Carousel>
+        <CarouselContent>
+          <RangeCard
+            image={testImage}
+            title="Rainbow Tiles"
+            description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
+            buttonLabel="Shop range"
+            diamondColor="bg-purple-100"
+            diamondHoverColor="group-hover:bg-purple-900"
+            buttonColor="bg-purple-300"
+            buttonHoverColor="group-hover:bg-purple-400"
+            buttonTextColor="text-purple-900"
+          />
 
-        <RangeCard
-          image={testImage}
-          title="Rainbow Tiles"
-          description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
-          buttonLabel="Shop range"
-          diamondColor="bg-purple-100"
-          diamondHoverColor="group-hover:bg-purple-900"
-          buttonColor="bg-purple-300"
-          buttonHoverColor="group-hover:bg-purple-400"
-          buttonTextColor="text-purple-900"
-        />
+          <RangeCard
+            image={testImage}
+            title="Rainbow Tiles"
+            description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
+            buttonLabel="Shop range"
+            diamondColor="bg-purple-100"
+            diamondHoverColor="group-hover:bg-purple-900"
+            buttonColor="bg-purple-300"
+            buttonHoverColor="group-hover:bg-purple-400"
+            buttonTextColor="text-purple-900"
+          />
 
-        <RangeCard
-          image={testImage}
-          title="Rainbow Tiles"
-          description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
-          buttonLabel="Shop range"
-          diamondColor="bg-purple-100"
-          diamondHoverColor="group-hover:bg-purple-900"
-          buttonColor="bg-purple-300"
-          buttonHoverColor="group-hover:bg-purple-400"
-          buttonTextColor="text-purple-900"
-        />
+          <RangeCard
+            image={testImage}
+            title="Rainbow Tiles"
+            description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
+            buttonLabel="Shop range"
+            diamondColor="bg-purple-100"
+            diamondHoverColor="group-hover:bg-purple-900"
+            buttonColor="bg-purple-300"
+            buttonHoverColor="group-hover:bg-purple-400"
+            buttonTextColor="text-purple-900"
+          />
 
-        <RangeCard
-          image={testImage}
-          title="Rainbow Tiles"
-          description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
-          buttonLabel="Shop range"
-          diamondColor="bg-purple-100"
-          diamondHoverColor="group-hover:bg-purple-900"
-          buttonColor="bg-purple-300"
-          buttonHoverColor="group-hover:bg-purple-400"
-          buttonTextColor="text-purple-900"
-        />
-      </div>
+          <RangeCard
+            image={testImage}
+            title="Rainbow Tiles"
+            description="Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!"
+            buttonLabel="Shop range"
+            diamondColor="bg-purple-100"
+            diamondHoverColor="group-hover:bg-purple-900"
+            buttonColor="bg-purple-300"
+            buttonHoverColor="group-hover:bg-purple-400"
+            buttonTextColor="text-purple-900"
+          />
+        </CarouselContent>
+      </Carousel>
 
       <div className="flex gap-4">
         <ProductCard
