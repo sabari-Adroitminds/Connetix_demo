@@ -7,6 +7,7 @@ import {
   FieldValues,
   FieldPath,
 } from "react-hook-form";
+import clsx from "clsx";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -17,6 +18,7 @@ export interface InputProps
   isRequired?: boolean;
   focusColor?: string;
   name: string;
+  containerClassName?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -28,6 +30,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       className = "",
       isRequired = false,
       focusColor = "purple-500",
+      containerClassName = "",
       name,
       ...props
     },
@@ -48,7 +51,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           name={name as FieldPath<FieldValues>}
           control={formContext.control}
           render={({ field, fieldState }) => (
-            <div className="grid h-24">
+            <div className={clsx("shrink grid h-24", containerClassName)}>
               <div className="space-y-1">
                 {label && (
                   <Label htmlFor={inputId} className="text-base font-medium">
@@ -62,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     {...props}
                     ref={field.ref}
                     id={inputId}
-                    className={`py-5 transition-colors duration-200 outline-none shadow-none border ${
+                    className={`w-full py-5 transition-colors duration-200 outline-none shadow-none border ${
                       variant === "white_rounded"
                         ? "!border-none bg-white"
                         : "border-gray-200"
