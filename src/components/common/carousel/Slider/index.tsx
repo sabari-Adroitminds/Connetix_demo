@@ -74,7 +74,7 @@ const Slider: FC<SliderProps> = ({
 
       {/* Navigation Dots */}
       <div className="flex relative my-2 justify-center ">
-        <div className="absolute w-full lg:-left-100   -bottom-0.5 transform flex items-center justify-center  ">
+        <div className="absolute w-full lg:-left-100 2xl:-left-135 -bottom-0.5 transform flex items-center justify-center  ">
      
           {buttonBorderColors.map((_, index) => (
             <button
