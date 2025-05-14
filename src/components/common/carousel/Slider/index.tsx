@@ -63,7 +63,7 @@ const Slider: FC<SliderProps> = ({
 
   return (
     <div
-      className="w-full relative my-4"
+      className="w-full relative my-4 overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -73,8 +73,9 @@ const Slider: FC<SliderProps> = ({
       </div>
 
       {/* Navigation Dots */}
-      <div className="mt-4 flex justify-center ">
-        <div className="absolute bottom-2 lg:left-75 md:left-50 transform flex items-center">
+      <div className="flex relative my-2 justify-center ">
+        <div className="absolute w-full lg:-left-100   -bottom-0.5 transform flex items-center justify-center  ">
+     
           {buttonBorderColors.map((_, index) => (
             <button
               key={`navigation-dot-${index}`}
@@ -86,6 +87,7 @@ const Slider: FC<SliderProps> = ({
               )}
             />
           ))}
+     
         </div>
       </div>
     </div>

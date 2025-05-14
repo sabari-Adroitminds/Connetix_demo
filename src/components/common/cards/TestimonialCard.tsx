@@ -14,7 +14,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   rating,
 }) => {
   return (
-    <div className=" w-[488px] h-[365px] left-[505px] bottom-0 bg-[#71C6BF] rounded-[12px] p-6 text-white flex flex-col justify-between">
+    <div className=" md:w-[488px] md:h-[365px] w-[360px] h-[365px] left-[353px] bottom-0 bg-[#71C6BF] rounded-[12px] p-6 text-white flex flex-col justify-between">
       <div>
         <div className="text-3xl mb-4">❝</div>
         <p className="text-white text-base leading-relaxed">{review}</p>
