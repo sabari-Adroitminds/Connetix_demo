@@ -47,8 +47,8 @@ export const connetixPacks = [
         buttonLabel: "Shop range",
         diamondColor: "bg-blue-light",
         diamondHoverColor: "group-hover:bg-blue-tint",
-        buttonColor: "bg-blue-300",
-        buttonHoverColor: "group-hover:bg-blue-400",
+        buttonColor: "bg-blue-light",
+        buttonHoverColor: "group-hover:bg-blue-tint",
         buttonTextColor: "text-blue-900",
     },
     // {
@@ -71,7 +71,7 @@ export const connetixPacks = [
         diamondHoverColor: "group-hover:bg-yellow-tint",
         buttonColor: "bg-yellow-light",
         buttonHoverColor: "group-hover:bg-yellow-tint",
-        buttonTextColor: "text-orange-900",
+        buttonTextColor: "",
     },
     {
         image: pastelTilesImage,

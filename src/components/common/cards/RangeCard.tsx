@@ -55,7 +55,7 @@ const RangeCard: FC<RangeCardProps> = ({
             buttonColor,
             buttonHoverColor,
             buttonTextColor,
-            "group-hover:bg-opacity-90"
+            
           )}
         >
           {buttonLabel}

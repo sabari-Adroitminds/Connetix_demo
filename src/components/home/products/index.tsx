@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductScroll from './productScroll'
+import ProductScroll from './ProductScroll'
 
 const Products = () => {
   return (

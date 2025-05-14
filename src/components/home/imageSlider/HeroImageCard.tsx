@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 import clsx from 'clsx'
 import { Button } from '@/components/ui/button'
 
-interface HeroSliderProps {
+interface HeroImageCardProps {
   title: string
   subtitle?: string
   description: string
@@ -19,7 +19,7 @@ interface HeroSliderProps {
   image: StaticImageData
 }
 
-export default function HeroSlider({
+export default function HeroImageCard({
   title,
   subtitle,
   description,
@@ -32,12 +32,12 @@ export default function HeroSlider({
   buttonColorClass = 'primary',
 
   image
-}: HeroSliderProps) {
+}: HeroImageCardProps) {
   return (
-    <div className={clsx(bgColorClass, 'xl:w-[1260px] lg:w-[1080px] md:w-[700px] rounded-xl')}>
+    <div className={clsx(bgColorClass, '3xl:w-[1600px] 2xl:w-[1280px] xl:w-[1080px] lg:w-[980px] md:w-[600px] rounded-xl')}>
       <div className="flex  flex-col-reverse lg:flex-row items-center justify-around md:justify-between ">
         {/* Text Section */}
-        <div className="flex xl:flex-4/12   items-center justify-center   md:w-[100%] w-[366px]  h-[273px] p-[30px] align-center ">
+        <div className="flex xl:flex-4/12 items-center justify-center md:w-[100%] w-[366px] max-h-[80vh] h-[273px] p-[30px] align-center ">
           <div className="lg:w-[421px] w-full flex flex-col items-center lg:items-start justify-center gap-6 md:text-left mb-8 md:mb-0">
             {subtitle && (
               <p className={clsx('text-sm font-medium hidden md:block', subtitleColorClass)}>
@@ -47,10 +47,10 @@ export default function HeroSlider({
             <h2 className={clsx('text=[32px]/[40px] md:text-[45px]/[45px] lg:text-[70px]/[75px] l font-[300px]', titleColorClass)}>
               {title}
             </h2>
-            <p className={clsx('text-[14px]  md:text-lg  hidden lg:block', descriptionColorClass)}>
+            <p className={clsx('text-[14px] md:text-lg hidden lg:block', descriptionColorClass)}>
               {description}
             </p>
-            <p className={clsx('text-[14px]  md:text-lg text-center  lg:hidden block', descriptionColorClass)}>
+            <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>
               {descriptionForSmallScreens}
             </p>
             <Button
@@ -65,14 +65,14 @@ export default function HeroSlider({
           </div>
         </div>
         {/* Image Section */}
-        <div className="  w-full lg:h-[851px]  md:h-[500px]    h-[380px] rounded-xl ">
+      
           <Image
             src={image}
             alt={title}
-            className="object-cover w-full lg:h-full md:h-[500px]    h-[380px] rounded-r-xl "
+          className="object-cover w-full    lg:h-[851px]  md:h-[500px] max-h-[80vh]    h-[380px]  "
             priority
           />
-        </div>
+       
       </div>
     </div>
   )

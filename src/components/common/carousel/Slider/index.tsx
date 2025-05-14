@@ -63,7 +63,7 @@ const Slider: FC<SliderProps> = ({
 
   return (
     <div
-      className="w-full relative my-4 overflow-hidden"
+      className="w-full relative pt-2 overflow-hidden "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

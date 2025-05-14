@@ -1,10 +1,11 @@
 import Slider from '@/components/common/carousel/Slider'
 import SliderItem from '@/components/common/carousel/Slider/SliderItem'
 import React from 'react'
-import HeroSlider from './heroSlider';
+
 import heroImage from "../../../../public/images/hero.jpg";
 import hero1Image from "../../../../public/images/hero2.png";
 import hero2Image from "../../../../public/images/hero3.png";
+import HeroImageCard from './HeroImageCard';
 const ImageSlider = () => {
 
     const buttonColors = ["bg-primary-tint", "bg-secondary-tint", "bg-yellow-tint"];
@@ -25,7 +26,7 @@ const ImageSlider = () => {
 
 export default ImageSlider
 const items = [
-    <HeroSlider
+    <HeroImageCard
         title="Where play & learning connect"
         descriptionForSmallScreens="Connetix inspires open-ended play and brings imagination to life."
         subtitle="Award winning educational toy"
@@ -40,7 +41,7 @@ const items = [
         image={heroImage}
         key={1}
     />,
-    <HeroSlider
+    <HeroImageCard
         title="Where play & learning connect"
         subtitle="Award winning educational toy"
         descriptionForSmallScreens="Connetix inspires open-ended play and brings imagination to life."
@@ -55,7 +56,7 @@ const items = [
         image={hero1Image}
         key={2}
     />,
-    <HeroSlider
+    <HeroImageCard
         title="Where play & learning connect"
         subtitle="Award winning educational toy"
         descriptionForSmallScreens="Connetix inspires open-ended play and brings imagination to life."

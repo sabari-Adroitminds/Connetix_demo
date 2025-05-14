@@ -5,6 +5,8 @@
   --breakpoint-md: 640px;
   --breakpoint-lg: 920px;
   --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1920px;
   /* Primary Colors */
   --color-primary: #683C86; /* Primary/Purple 3 */
   --color-primary-tint: #C4ACF0; /* Primary/Purple 1 */
