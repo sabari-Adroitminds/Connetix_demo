@@ -1,29 +1,29 @@
-import RangeCard from "@/components/cards/RangeCard";
+import RangeCard from "@/components/common/cards/RangeCard";
 import testImage from "../../public/images/test.png";
 
 import HeroSlider from "@/components/home/section-One/component/HeroSlider";
 import heroImage from "../../public/images/hero.jpg";
 import hero1Image from "../../public/images/hero2.png";
 import hero2Image from "../../public/images/hero3.png";
-import AddOnCard from "@/components/cards/SmallAddOnCard";
-// import ProductCard from "@/components/cards/productCard";
-// import PageCard from "@/components/cards/pageCard";
+import AddOnCard from "@/components/common/cards/SmallAddOnCard";
+// import ProductCard from "@/components/common/cards/productCard";
+// import PageCard from "@/components/common/cards/pageCard";
 
 import becomeImage1 from "../../public/images/become1.png";
-import PortalLandscapeCard from "@/components/cards/PortalLandscapeCard";
+import PortalLandscapeCard from "@/components/common/cards/PortalLandscapeCard";
 
-import Slider from "@/components/common/Carousel/Slider";
-import SliderItem from "@/components/common/Carousel/Slider/SliderItem";
+import Slider from "@/components/common/carousel/Slider";
+import SliderItem from "@/components/common/carousel/Slider/SliderItem";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselScrollbar,
-} from "@/components/common/Carousel/CardSlider";
-import TestimonialCard from "@/components/cards/TestimonialCard";
-import BlogCard from "@/components/cards/BlogCard";
-import ProductCard from "@/components/cards/ProductCard";
-import PageCard from "@/components/cards/PageCard";
+} from "@/components/common/carousel/CardSlider";
+import TestimonialCard from "@/components/common/cards/TestimonialCard";
+import BlogCard from "@/components/common/cards/BlogCard";
+import ProductCard from "@/components/common/cards/ProductCard";
+import PageCard from "@/components/common/cards/PageCard";
 
 const items = [
   <HeroSlider

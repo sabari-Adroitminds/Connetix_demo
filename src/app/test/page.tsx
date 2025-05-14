@@ -4,7 +4,7 @@ import CheckBox from '@/components/common/inputs/CheckBox'
 import Input from '@/components/common/inputs/Input'
 import Radio from '@/components/common/inputs/Radio'
 import Toggle from '@/components/common/inputs/Toggle'
-import SortBySelect from '@/components/common/select'
+import SortBySelect from '@/components/common/Select'
 import SignUp from '@/components/common/SignUp'
 import React, { useState } from 'react'
 

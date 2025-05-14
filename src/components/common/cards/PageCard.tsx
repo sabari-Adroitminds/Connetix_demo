@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 interface PageCardProps {
   title: string;

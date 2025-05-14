@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { FC } from "react";
 import clsx from "clsx";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 interface RangeCardProps {
   image: StaticImageData;

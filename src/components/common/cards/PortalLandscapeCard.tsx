@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { FC } from "react";
 
 type PortalLandscapeCardProps = {

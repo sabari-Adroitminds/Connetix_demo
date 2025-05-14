@@ -9,7 +9,7 @@ import Select from "./inputs/Select";
 import Textarea from "./inputs/Textarea";
 import { Button } from "@/components/ui/button";
 import CheckBox from "./inputs/CheckBox";
-import { Form } from "../ui/form";
+import { Form } from "@/components/form";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
