@@ -110,7 +110,7 @@ const BecomeRetailer = () => {
                   <Input
                     name="email"
                     type="email"
-                    className="h-[56px] min-w-[320px]"
+                    className="h-[56px] w-full lg:min-w-[320px]"
                     variant="white_rounded"
                     label="Email Address"
                     placeholder="Email Address"
