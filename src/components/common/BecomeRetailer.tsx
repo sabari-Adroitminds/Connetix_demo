@@ -91,7 +91,7 @@ const BecomeRetailer = () => {
                     <Input
                       name="firstName"
                       type="text"
-                      containerClassName="lg:w-fit sm:w-full sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
                       className="h-[56px]"
                       variant="white_rounded"
                       label="First Name"
@@ -102,7 +102,7 @@ const BecomeRetailer = () => {
                     <Input
                       name="lastName"
                       type="text"
-                      containerClassName="lg:w-fit sm:w-full sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
                       className="h-[56px]"
                       variant="white_rounded"
                       label="Last Name"
@@ -116,7 +116,7 @@ const BecomeRetailer = () => {
                       name="email"
                       type="email"
                       className="h-[56px] w-full min-w-[320px]"
-                      containerClassName="lg:w-fit sm:w-full  sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full  sm:max-w-[664px] min-w-[320px]"
                       variant="white_rounded"
                       label="Email Address"
                       placeholder="Email Address"
@@ -126,7 +126,7 @@ const BecomeRetailer = () => {
                       name="phone"
                       type="tel"
                       className="h-[56px] min-w-[320px]"
-                      containerClassName="lg:w-fit sm:w-full sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
                       variant="white_rounded"
                       label="Phone"
                       placeholder="Phone"
@@ -138,7 +138,7 @@ const BecomeRetailer = () => {
                     <Select
                       name="country"
                       placeholder="Select Country"
-                      containerClassName="lg:w-fit sm:w-full sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
 
                       label="Select Country"
                       options={[
@@ -156,7 +156,7 @@ const BecomeRetailer = () => {
                       name="questions"
                       label="What can we help you with"
                       placeholder="What can we help you with"
-                      containerClassName="lg:w-fit sm:w-full sm:max-w-[664px] min-w-[320px]"
+                      containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
 
                       options={[
                         { value: "product", label: "Product Information" },
