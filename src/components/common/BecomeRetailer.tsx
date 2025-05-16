@@ -139,7 +139,6 @@ const BecomeRetailer = () => {
                       name="country"
                       placeholder="Select Country"
                       containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
-
                       label="Select Country"
                       options={[
                         { value: "us", label: "United States" },
@@ -157,7 +156,6 @@ const BecomeRetailer = () => {
                       label="What can we help you with"
                       placeholder="What can we help you with"
                       containerClassName="lg:w-fit w-full sm:max-w-[664px] min-w-[320px]"
-
                       options={[
                         { value: "product", label: "Product Information" },
                         { value: "wholesale", label: "Wholesale Inquiry" },

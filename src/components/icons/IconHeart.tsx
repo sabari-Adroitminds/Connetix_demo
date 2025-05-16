@@ -1,9 +1,7 @@
+import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
 
-interface IIconHeart extends React.SVGProps<SVGSVGElement> {
-    color?: string
-}
-const IconHeart = ({color, ...props}) => (
+const IconHeart:React.FC<IIconProps> = ({color, ...props}) => (
   <svg
     width={20}
     height={18}

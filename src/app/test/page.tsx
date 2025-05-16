@@ -8,6 +8,8 @@ import SortBySelect from "@/components/common/inputs/Select";
 import SignUp from "@/components/common/SignUp";
 import React, { useState } from "react";
 import ImageGallery from "@/components/common/ImageGallery";
+import AwardWinning from "@/components/home/awards";
+import EducationalToy from "@/components/common/EducationalToy";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -90,9 +92,18 @@ const Test = () => {
 
       <SignUp />
       <BecomeRetailer />
+
       <div className="mt-44">
 
       <ImageGallery images={["/images/1.png", "/images/2.png", "/images/3.png", "/images/4.png", "/images/5.png", "/images/6.png", "/images/7.png"]} id="test" focusColor="var(--color-secondary, --color-primary)"/>
+      </div>
+
+      <div className="mt-44">
+        <AwardWinning />
+      </div>
+
+      <div className="mt-44">
+        <EducationalToy />
       </div>
     </div>
   );

@@ -28,8 +28,8 @@ const ImageGallery: FC<ImageGalleryProps> = ({
 
   const triggerZoom = () => {
     if (imageContainerRef.current) {
-        const imgElement = imageContainerRef.current.querySelector("img");
-        if (imgElement) {
+      const imgElement = imageContainerRef.current.querySelector("img");
+      if (imgElement) {
         imgElement.click();
         // imgElement?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
         setIsZoomed(!isZoomed);
@@ -37,19 +37,19 @@ const ImageGallery: FC<ImageGalleryProps> = ({
     }
   };
 
-// const triggerZoom = () => {
-//   const imgElement = imageContainerRef.current?.querySelector("img");
+  // const triggerZoom = () => {
+  //   const imgElement = imageContainerRef.current?.querySelector("img");
 
-//   if (imgElement && imgElement.complete) {
-//     // Image has loaded, safe to dispatch
-//     imgElement.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   } else {
-//     // Retry when the image loads
-//     imgElement?.addEventListener("load", () => {
-//       imgElement.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//     }, { once: true });
-//   }
-// }
+  //   if (imgElement && imgElement.complete) {
+  //     // Image has loaded, safe to dispatch
+  //     imgElement.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  //   } else {
+  //     // Retry when the image loads
+  //     imgElement?.addEventListener("load", () => {
+  //       imgElement.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  //     }, { once: true });
+  //   }
+  // }
 
   useEffect(() => {
     setMounted(true);
@@ -86,7 +86,7 @@ const ImageGallery: FC<ImageGalleryProps> = ({
         </button>
 
         {mounted ? (
-          <div ref={imageContainerRef} style={{maxHeight:'inherit'}}>
+          <div ref={imageContainerRef} style={{ maxHeight: "inherit" }}>
             <InnerImageZoom
               src={images[selectedImage]}
               zoomSrc={images[selectedImage]}

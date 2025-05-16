@@ -13,6 +13,7 @@
   --color-primary-tint: #C4ACF0; /* Primary/Purple 1 */
   --color-primary-light: #F4EEFE; /* Lights/Purple */
   --color-primary-foreground:#FFFFFF;
+  --color-primary-very-light:#D0BDF3;
 
   /* Secondary Blue 1 */
   --color-secondary: #5E92F8;
@@ -97,6 +98,8 @@
 .iiz > span{
   display: none;
 }
+
+
 
   
 

@@ -1,8 +1,8 @@
+import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
 
-interface IIconProps extends React.SVGProps<SVGSVGElement> {
-}
-const IconGalleryButton = ({color, ...props}) => (
+
+const IconGalleryButton:React.FC<IIconProps> = ({color, ...props}) => (
   <svg
     width={40}
     height={40}
