@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import ImageGallery from "@/components/common/ImageGallery";
 import AwardWinning from "@/components/home/awards";
 import EducationalToy from "@/components/common/EducationalToy";
+import PreTitle from "@/components/common/PreTitle";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -105,6 +106,15 @@ const Test = () => {
       <div className="mt-44">
         <EducationalToy />
       </div>
+
+      <h1>Test</h1>
+      <h2>Test</h2>
+      <h3>Test</h3>
+      <h4>Test</h4>
+      <h5>Test</h5>
+      <h6>Test</h6>
+
+      <PreTitle title="Lorem ipsum dolor" />
     </div>
   );
 };

@@ -1,6 +1,27 @@
 @import "tailwindcss";
 /* import 'react-inner-image-zoom/lib/styles.min.css'; */
 
+@layer base {
+
+  /* Set Gotham Rounded as the default font */
+  html {
+    font-family: var(--font-gotham-rounded), system-ui, sans-serif;
+  }
+}
+
+/* Font classes for specific usage */
+.font-gotham {
+  font-family: var(--font-gotham-rounded), system-ui, sans-serif;
+}
+
+.font-geist {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
 @theme{
   --breakpoint-sm: 400px;
   --breakpoint-md: 640px;
@@ -97,6 +118,66 @@
 
 .iiz > span{
   display: none;
+}
+
+h1{
+  @apply font-medium text-[32px] leading-10 text-navy;
+  @apply md:text-[50px] leading-[55px];
+  @apply lg:text-[70px] lg:leading-[75px];
+}
+
+h2{
+  @apply font-medium text-[32px] leading-10 text-navy;
+  @apply md:text-[26px] leading-[35px];
+  @apply lg:text-[42px] lg:leading-[52px];
+}
+
+h3{
+  @apply font-medium text-[24px] leading-6 text-navy;
+  @apply md:text-[28px] leading-[32px];
+  @apply lg:text-[32px] lg:leading-[40px];
+}
+
+h4{
+  @apply font-medium text-[20px] leading-7 text-navy;
+  @apply md:text-[22px] leading-7;
+  @apply lg:text-2xl lg:leading-6;
+}
+
+h5{
+  @apply font-medium text-[18px] leading-7 text-navy;
+  @apply md:text-lg leading-7;
+  @apply lg:text-xl lg:leading-10;
+}
+
+h6{
+  @apply font-medium text-[16px] leading-[26px] text-navy;
+  @apply md:text-base leading-[26px];
+  @apply lg:text-lg lg:leading-7;
+}
+
+.content-lg{
+  @apply text-lg leading-7 text-navy;
+  @apply md:text-lg leading-7;
+  @apply lg:text-xl lg:leading-[34px];
+}
+
+.content-md{
+  @apply text-sm leading-5 text-navy;
+  @apply md:text-sm leading-5;
+  @apply lg:text-lg lg:leading-7;
+}
+
+.content-sm{
+  @apply text-sm leading-5 text-navy;
+  @apply md:text-sm leading-5;
+  @apply lg:text-base lg:leading-[26px];
+}
+
+.article-title{
+  @apply font-medium text-xl leading-[30px] text-navy;
+  @apply md:text-2xl leading-[26px];
+  @apply lg:text-[28px] lg:leading-[34px];
 }
 
 

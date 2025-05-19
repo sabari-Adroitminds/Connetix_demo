@@ -1,5 +1,6 @@
+import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
-const IconMesh = (props) => (
+const IconMesh:React.FC<IIconProps> = (props) => (
   <svg
     width={34}
     height={34}
