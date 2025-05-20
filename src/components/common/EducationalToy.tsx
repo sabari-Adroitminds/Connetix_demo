@@ -6,6 +6,7 @@ import IconCreativity from "../icons/educationalToy/IconCreativity";
 import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
+import clsx from "clsx";
 // import { Carousel, CarouselContent, CarouselItem, CarouselScrollbar } from "./carousel/CardSlider";
 
 const features = [
@@ -46,7 +47,7 @@ const EducationalToy: FC = () => {
         <Graphic />
       </div>
       
-      <div className="overflow-hidden z-20">
+      <div className="overflow-hidden z-20 max-w-[670px]">
         <h1 className="font-bold text-[32px] lg:text-[50px] text-navy">
           The educational toy bringing imagination to life!
         </h1>
