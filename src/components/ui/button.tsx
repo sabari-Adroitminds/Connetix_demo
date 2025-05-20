@@ -31,7 +31,7 @@ variant: {
   greenTint: "bg-[green-tint] text-white shadow-xs hover:bg-[green-tint]/80",
   greenLight: "bg-[green-light] text-[green] shadow-xs hover:bg-[green-light]/80",
 
-  yellow: "bg-[yellow] text-white shadow-xs hover:bg-[yellow]/80",
+        yellow: "bg-[#F89B4C] text-white shadow-xs hover:bg-[yellow]/80",
   yellowTint: "bg-[yellow-tint] text-white shadow-xs hover:bg-[yellow-tint]/80",
   yellowLight: "bg-[yellow-light] text-[yellow] shadow-xs hover:bg-[yellow-light]/80",
 

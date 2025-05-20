@@ -1,47 +1,37 @@
 import React from 'react'
-import SubMenuCard from './SubMenuCard'
 
-import rainbowTilesImage from '../../../../public/images/nav/Nav Rainbow Tiles.png';
-import pastelTilesImage from '../../../../public/images/nav/Nav Pastel Tiles.png';
-import clearTilesImage from '../../../../public/images/nav/Nav Clear Tiles.png';
-import ballRunsImage from '../../../../public/images/nav/Nav Ball Runs.png';
-import roadsTransportImage from '../../../../public/images/nav/Nav Roads & Transport.png';
-import basePlatesImage from '../../../../public/images/nav/Nav Base Plates.png';
 
-const shopTileData = [
-    {
-        title: 'Rainbow Tiles',
-        imageSrc: rainbowTilesImage,
-    },
-    {
-        title: 'Pastel Tiles',
-        imageSrc: pastelTilesImage,
-    },
-    {
-        title: 'Clear Tiles',
-        imageSrc: clearTilesImage,
-    },
-    {
-        title: 'Ball Runs',
-        imageSrc: ballRunsImage,
-    },
-    {
-        title: 'Roads & Transport',
-        imageSrc: roadsTransportImage,
-    },
-    {
-        title: 'Base Plates',
-        imageSrc: basePlatesImage,
-    },
-];
+
+import { Button } from '@/components/ui/button';
+import EducationDiscountCard from './components/EducationDiscountCard';
+import SubMenuCard from './components/SubMenuCard';
+import { playTileData } from './constant';
+
+
 const Play = () => {
-  return (
-      <>
-          <SubMenuCard data={shopTileData}>
-              <div className="text-xl font-bold">Play Categories</div>
-          </SubMenuCard>
-      </>
-  )
+    return (
+        <>
+            <SubMenuCard data={playTileData}>
+                <div className='flex flex-col justify-between h-full  '>
+                <div className='p-4 gap-4 flex flex-col items-start max-w-[412px]'>
+                    <h1 className='text-[50px]'>Connetix
+                        Play Zone</h1>
+                    <p className='text-[16px] font-[500]  text-custom-gray '>The imagination is limitless, and we’ve got ideas galore to keep you and your children entertained for hours.</p>
+                    <div className='flex gap-4 mt-4'>
+                        <Button className='text-[18px] w-[212px]' variant={'primary'}>
+                            Explore the Play Zone
+                        </Button>
+
+                    </div>
+                   
+                </div>
+             
+                    <EducationDiscountCard />
+                
+                </div>
+            </SubMenuCard>
+        </>
+    )
 }
 
 export default Play

@@ -1,6 +1,6 @@
 'use client'
 import { useState, ReactNode } from "react";
-import { ChevronDown } from "lucide-react";
+import IconDownArrow from "../icons/IconDownArrow";
 
 type AccordionItemProps = {
     title: string;
@@ -18,8 +18,8 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
                 className="w-full flex justify-between items-center px-4 py-3 text-left text-black font-medium hover:bg-gray-100 focus:outline-none"
             >
                 <span>{title}</span>
-                <ChevronDown
-                    className={`h-5 w-5 transform transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"
+                <IconDownArrow
+                    className={`h-5 w-5 fill-blue transform transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"
                         }`}
                 />
             </button>

@@ -13,7 +13,7 @@ const NavTileCard: React.FC<TileCardProps> = ({ title, imageSrc }) => {
                 src={imageSrc}
                 alt={title}
                
-                className="object-cover  w-[254px] h-[198px] rounded-lg "
+                className="object-cover  w-[254px] h-[160px] xl:h-[198px] rounded-lg "
             />
             <div className="text-start text-sm font-medium mt-1">{title}</div>
         </div>

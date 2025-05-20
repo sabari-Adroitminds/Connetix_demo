@@ -3,6 +3,7 @@
 import Image, { StaticImageData } from 'next/image'
 import clsx from 'clsx'
 import { Button } from '@/components/ui/button'
+import PreTitle from '@/components/common/PreTitle'
 
 interface HeroImageCardProps {
   title: string
@@ -34,30 +35,29 @@ export default function HeroImageCard({
   image
 }: HeroImageCardProps) {
   return (
-    <div className={clsx(bgColorClass, '3xl:w-[1600px] 2xl:w-[1280px] xl:w-[1080px] lg:w-[980px] md:w-[600px] rounded-xl')}>
+    <div className={clsx(bgColorClass, '3xl:w-[1600px] 2xl:w-[1280px] xl:w-[1080px] lg:w-[980px] md:w-[600px] rounded-xl h-full')}>
       <div className="flex  flex-col-reverse lg:flex-row items-center justify-around md:justify-between ">
         {/* Text Section */}
         <div className="flex xl:flex-4/12 items-center justify-center md:w-[100%] w-[366px] max-h-[80vh] h-[273px] p-[30px] align-center ">
-          <div className="lg:w-[421px] w-full flex flex-col items-center lg:items-start justify-center gap-6 md:text-left mb-8 md:mb-0">
+          <div className="lg:w-[421px] w-full flex flex-col items-center lg:items-start justify-center px-4 gap-6 md:text-left mb-8 md:mb-0">
             {subtitle && (
-              <p className={clsx('text-sm font-medium hidden md:block', subtitleColorClass)}>
-                {subtitle}
-              </p>
+            
+              <PreTitle className='hidden lg:flex' title={subtitle} color={subtitleColorClass}/>
             )}
-            <h2 className={clsx('text=[32px]/[40px] md:text-[45px]/[45px] lg:text-[70px]/[75px] l font-[300px]', titleColorClass)}>
+            <p className={clsx(' text-[32px]/[32px] md:text-[45px]/[45px] lg:text-[70px]/[70px] l font-[300px] text-center lg:text-start', titleColorClass)}>
               {title}
-            </h2>
+            </p>
             <p className={clsx('text-[14px] md:text-lg hidden lg:block', descriptionColorClass)}>
               {description}
             </p>
-            <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>
+            <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>   
               {descriptionForSmallScreens}
             </p>
             <Button
               variant={buttonColorClass}
               className={clsx(
 
-                ' h-[50px]'
+                ' h-[50px] w-[224px] min-[150px]'
               )}
             >
               {buttonText}

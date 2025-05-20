@@ -4,18 +4,21 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import Navigation from './Navigation'
 import MobileMenu from './mobile/MobileMenu'
+import CartButton from './components/CartButton'
 
 const NavBar = () => {
   return (
-    <div className='w-full  h-[82px] flex items-center justify-between px-4 '>
+    <div className='w-full h-[55px] lg:h-[82px] flex items-center justify-between p-4 '>
       <MobileMenu/>
-      <Image src={logo} alt="Logo" />
+      <Image src={logo} alt="Logo" className='h-[28px] w-[170px] lg:h-[40px] lg:w-[238px]' />
       <Navigation />
-      <div className='items-center gap-4 hidden lg:block'>
-        <Button variant='secondary' className='min-w-[150px] ' >
+      <div className= 'flex gap-4 items-center'>
+        <Button variant='secondary' className='min-w-[150px] hidden lg:block ' >
           Where to buy
         </Button>
+        <CartButton /> 
       </div>
+     
     </div>
   )
 }

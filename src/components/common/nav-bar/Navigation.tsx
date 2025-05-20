@@ -30,15 +30,11 @@ const Navigation =()=>{
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Learn</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <Play />
-                    </NavigationMenuContent>
+                 
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                 <NavigationMenuTrigger>Connect</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                    <Play />
-                </NavigationMenuContent>      
+                 
                 </NavigationMenuItem>    
             </NavigationMenuList>
         </NavigationMenu>

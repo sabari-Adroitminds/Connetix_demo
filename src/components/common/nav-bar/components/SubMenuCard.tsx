@@ -1,6 +1,7 @@
 import React from 'react';
-import NavTileCard from './Card';
+
 import { StaticImageData } from 'next/image';
+import NavTileCard from './Card';
 
 interface TileItem {
     title: string;
@@ -14,11 +15,11 @@ interface SubMenuCardProps {
 
 const SubMenuCard: React.FC<SubMenuCardProps> = ({ data, children }) => {
     return (
-        <div className="min-w-[80vw] h-full bg-white p-4 flex">
+        <div className="min-w-[90vw] h-full max-h-[88vh] bg-white p-12 flex">
             <div className="flex-1/2">
                 {children}
             </div>
-            <div className="grid auto-cols-max grid-cols-3 gap-4">
+            <div className="grid max-h-full auto-cols-max grid-cols-3 gap-4">
                 {data.map((tile, index) => (
                     <NavTileCard imageSrc={tile.imageSrc} title={tile.title} key={index} />
                 ))}

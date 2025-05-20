@@ -1,9 +1,9 @@
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
-import { ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import IconDownArrow from "../icons/IconDownArrow"
 
 function NavigationMenu({
   className,
@@ -70,14 +70,14 @@ function NavigationMenuTrigger({
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
-      className={cn(navigationMenuTriggerStyle(), "group", className)}
+      className={cn(navigationMenuTriggerStyle(), "group p-0 px-2  flex-col text-lg", className)}
       {...props}
     >
       {children}{" "}
-      {/* <ChevronDownIcon
-        className="relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180"
+      <IconDownArrow
+        className="absolute  -bottom-2.5  ml-1 size-5 transition duration-300  hidden group-data-[state=open]:block"
         aria-hidden="true"
-      /> */}
+      />
     </NavigationMenuPrimitive.Trigger>
   )
 }
@@ -106,13 +106,13 @@ function NavigationMenuViewport({
   return (
     <div
       className={cn(
-        "absolute  top-full left-1/2 -translate-x-1/2  isolate z-50 min-w-[80vw] flex justify-center"
+        "absolute  border-0 top-full left-1/2 -translate-x-1/2  isolate z-50 min-w-[100vw]  flex justify-center"
       )}
     >
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          "origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] min-w-full overflow-hidden rounded-md border shadow md:w-[var(--radix-navigation-menu-viewport-width)]",
+          "border-0 origin-top-center bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] min-w-full overflow-hidden rounded-md  shadow md:w-[var(--radix-navigation-menu-viewport-width)]",
           className
         )}
         {...props}
