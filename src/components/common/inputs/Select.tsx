@@ -88,7 +88,7 @@ const Select = React.forwardRef<
                   </SelectPrimitive.Trigger>
                   <SelectPrimitive.Portal>
                     <SelectPrimitive.Content
-                      className=" z-50  w-full overflow-hidden rounded-md border border-gray-200 bg-white text-popover-foreground shadow-md animate-in fade-in-80"
+                      className="z-50 overflow-hidden rounded-md border border-gray-200 bg-white text-popover-foreground shadow-md animate-in fade-in-80 w-[var(--radix-select-trigger-width)]"
                       position="popper"
                       align="start"
                       sideOffset={5}
@@ -157,7 +157,7 @@ const Select = React.forwardRef<
             </SelectPrimitive.Trigger>
             <SelectPrimitive.Portal>
               <SelectPrimitive.Content
-                className="relative z-50 min-w-[8rem] overflow-hidden rounded-md border border-gray-200 bg-white text-popover-foreground shadow-md animate-in fade-in-80"
+                className="relative z-50 overflow-hidden rounded-md border border-gray-200 bg-white text-popover-foreground shadow-md animate-in fade-in-80 w-[var(--radix-select-trigger-width)]"
                 position="popper"
                 align="center"
                 sideOffset={5}
