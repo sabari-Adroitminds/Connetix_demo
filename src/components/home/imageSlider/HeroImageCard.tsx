@@ -29,7 +29,7 @@ export default function HeroImageCard({
   bgColorClass = 'bg-primary-light',
   titleColorClass = 'text-navy',
   subtitleColorClass = 'text-primary',
-  descriptionColorClass = 'text-navy',
+  descriptionColorClass = 'text-navy/80',
   buttonColorClass = 'primary',
 
   image
@@ -44,10 +44,11 @@ export default function HeroImageCard({
             
               <PreTitle className='hidden lg:flex' title={subtitle} color={subtitleColorClass}/>
             )}
-            <p className={clsx(' text-[32px]/[32px] md:text-[45px]/[45px] lg:text-[70px]/[70px] l font-[300px] text-center lg:text-start', titleColorClass)}>
+            <p className={clsx(' text-[32px]/[32px] md:text-[45px]/[45px] lg:text-[70px]/[70px] font-[400]  text-center lg:text-start', titleColorClass)}>
               {title}
             </p>
-            <p className={clsx('text-[14px] md:text-lg hidden lg:block', descriptionColorClass)}>
+            <p  className={clsx('text-[14px] md:text-[16px] font-light  text-font/80  hidden lg:block', )}>
+            
               {description}
             </p>
             <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>   

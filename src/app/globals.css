@@ -1,25 +1,74 @@
 @import "tailwindcss";
 /* import 'react-inner-image-zoom/lib/styles.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_lightitalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_mediumitalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/gothamrnd_bolditalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
 
 @layer base {
 
   /* Set Gotham Rounded as the default font */
   html {
-    font-family: var(--font-gotham-rounded), system-ui, sans-serif;
+    font-family: "MyCustomFont",  "Figtree","Open Sans", "Varela Round", sans-serif;
   }
 }
 
 /* Font classes for specific usage */
 .font-gotham {
-  font-family: var(--font-gotham-rounded), system-ui, sans-serif;
+  font-family:"MyCustomFont",  "Figtree","Open Sans", "Varela Round", sans-serif;
 }
 
 .font-geist {
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family:"MyCustomFont",  "Figtree","Open Sans", "Varela Round", sans-serif;
 }
 
 .font-mono {
-  font-family: var(--font-geist-mono), monospace;
+  font-family:"MyCustomFont",  "Figtree","Open Sans", "Varela Round", sans-serif;
 }
 
 @theme{

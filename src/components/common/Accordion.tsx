@@ -24,10 +24,10 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
                 />
             </button>
             <div
-                className={`overflow-hidden transition-all duration-500 ${isOpen ? "max-h-screen py-2 px-4" : "max-h-0"
+                className={`overflow-hidden transition-all duration-200 ease-in-out ${isOpen ? "max-h-screen py-2 px-4" : "max-h-0"
                     }`}
             >
-                {isOpen && <div className="text-black text-md">{children}</div>}
+                { <div className="text-black text-md ">{children}</div>}
             </div>
         </div>
     );

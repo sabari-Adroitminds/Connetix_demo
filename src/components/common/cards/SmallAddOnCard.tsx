@@ -16,7 +16,7 @@ const AddOnCard: FC<AddOnCardProps> = ({
   price,
 }) => {
   return (
-    <div className="flex items-center justify-between border border-[#F0ECF3] rounded-xl p-4 w-full max-w-md bg-white shadow-sm">
+    <div className="flex items-center justify-between border border-[#F0ECF3] rounded-xl p-4 w-full max-w-full bg-white shadow-sm">
       <div className="flex items-center gap-4">
         <div className="w-16 h-16 relative">
           <Image

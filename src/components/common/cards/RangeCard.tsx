@@ -45,7 +45,7 @@ const RangeCard: FC<RangeCardProps> = ({
             className="object-contain transform transition-transform duration-500"
           />
         </div>
-        <h2 className="text-2xl font-semibold text-gray-800 mt-6 z-10">
+        <h2 className="text-2xl font-light text-font/20 mt-6 z-10">
           {title}
         </h2>
         <p className="text-sm text-gray-600 mt-2 z-10 md:max-w-96 max-w-72">{description}</p>
