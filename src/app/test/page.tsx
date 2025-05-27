@@ -11,6 +11,7 @@ import ImageGallery from "@/components/common/ImageGallery";
 import AwardWinning from "@/components/home/awards";
 import EducationalToy from "@/components/common/EducationalToy";
 import PreTitle from "@/components/common/PreTitle";
+import HomeSignUp from "@/components/home/HomeSignUp";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -115,6 +116,7 @@ const Test = () => {
       <h6>Test</h6>
 
       <PreTitle title="Lorem ipsum dolor" />
+      <HomeSignUp />
     </div>
   );
 };
