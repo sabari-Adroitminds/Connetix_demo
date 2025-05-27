@@ -1,3 +1,4 @@
+'use client'
 import { FC } from "react";
 import Robot from "./Robot";
 import IconFundamental from "../icons/educationalToy/IconFundamental";
@@ -6,8 +7,10 @@ import IconCreativity from "../icons/educationalToy/IconCreativity";
 import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
-import clsx from "clsx";
-// import { Carousel, CarouselContent, CarouselItem, CarouselScrollbar } from "./carousel/CardSlider";
+import { motion } from "motion/react"
+
+
+
 
 const features = [
   {
@@ -37,6 +40,7 @@ const features = [
 ];
 
 const EducationalToy: FC = () => {
+
   return (
     <div className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]">
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
@@ -56,7 +60,7 @@ const EducationalToy: FC = () => {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.id} className="flex flex-col  gap-[10px] lg:gap-4 w-fit lg:min-w-[300px] max-w-[175px] lg:max-w-[300px] flex-shrink-0">
+              <div key={feature.id} className="flex flex-col gap-[10px] lg:gap-4 w-fit lg:min-w-[300px] max-w-[175px] lg:max-w-[300px] flex-shrink-0">
                 <div className="flex flex-col lg:flex-row lg:items-center gap-[10px] lg:gap-4">
                   <Icon />
                   <span className="font-medium text-base lg:text-xl text-navy leading-6">
@@ -70,30 +74,9 @@ const EducationalToy: FC = () => {
             );
           })}
         </div>
-        {/* <Carousel className=" lg:hidden p-4">
-        <CarouselContent className="flex gap-10 mt-10 pb-4">
-          {features.map((slide) =>{
-            const Icon = slide.icon;
-          
-          return (
-            <div key={slide.id} className="flex flex-col gap-4 w-[175px] ">
-                <div className="flex flex-col items-center gap-4">
-                  <Icon />
-                  <span className="font-medium text-base text-navy leading-6">
-                    {slide.title}
-                  </span>
-                </div>
-                <p className="text-sm text-navy opacity-80">
-                  {slide.description}
-                </p>
-              </div>
-          )})}
-        </CarouselContent>
-        <CarouselScrollbar className="p-0" />
-      </Carousel>  */}
       </div>
-      
-      <Robot />
+
+        <Robot />
       <Image 
         className="absolute -bottom-12 left-20 rotate-45" 
         src="/images/tiles/pink.png" 
