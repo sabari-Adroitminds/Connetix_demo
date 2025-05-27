@@ -1,6 +1,16 @@
 import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
-const IconTikTok:React.FC<IIconProps> = (props) => (
+
+interface IconTikTokProps extends IIconProps {
+    rectFill?: string;
+    pathFill?: string;
+}
+
+const IconTikTok: React.FC<IconTikTokProps> = ({
+    rectFill = "#F4EEFE",
+    pathFill = "#27344F",
+    ...props
+}) => (
     <svg
         width={54}
         height={54}
@@ -9,11 +19,12 @@ const IconTikTok:React.FC<IIconProps> = (props) => (
         xmlns="http://www.w3.org/2000/svg"
         {...props}
     >
-        <rect width={54} height={54} rx={27} fill="#F4EEFE" />
+        <rect width={54} height={54} rx={27} fill={rectFill} />
         <path
             d="M40 19.2684V24.4423C39.096 24.354 37.9215 24.1486 36.6221 23.6724C34.9255 23.0504 33.6627 22.1999 32.8355 21.5415V31.9987L32.8144 31.966C32.8278 32.1734 32.8355 32.3845 32.8355 32.5976C32.8355 37.7907 28.6112 42.0181 23.4177 42.0181C18.2243 42.0181 14 37.7907 14 32.5976C14 27.4046 18.2243 23.1752 23.4177 23.1752C23.9263 23.1752 24.4253 23.2155 24.9128 23.2942V28.3933C24.4445 28.2262 23.9417 28.136 23.4177 28.136C20.9592 28.136 18.9574 30.1364 18.9574 32.5976C18.9574 35.0588 20.9592 37.0593 23.4177 37.0593C25.8763 37.0593 27.878 35.0569 27.878 32.5976C27.878 32.5055 27.8761 32.4133 27.8704 32.3212V12H33.0389C33.0581 12.4377 33.0754 12.8793 33.0946 13.317C33.1291 14.179 33.4362 15.0064 33.9716 15.6841C34.5992 16.4808 35.5262 17.4062 36.8275 18.1453C38.0462 18.8345 39.1901 19.1321 40 19.2722V19.2684Z"
-            fill="#27344F"
+            fill={pathFill}
         />
     </svg>
 );
+
 export default IconTikTok;

@@ -1,6 +1,16 @@
 import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
-const IconInstagram:React.FC<IIconProps> = (props) => (
+
+interface IconInstagramProps extends IIconProps {
+    rectFill?: string;
+    pathFill?: string;
+}
+
+const IconInstagram: React.FC<IconInstagramProps> = ({
+    rectFill = "#F4EEFE",
+    pathFill = "#27344F",
+    ...props
+}) => (
     <svg
         width={54}
         height={54}
@@ -9,19 +19,20 @@ const IconInstagram:React.FC<IIconProps> = (props) => (
         xmlns="http://www.w3.org/2000/svg"
         {...props}
     >
-        <rect width={54} height={54} rx={27} fill="#F4EEFE" />
+        <rect width={54} height={54} rx={27} fill={rectFill} />
         <path
             d="M34.4179 13.5H20.4821C16.6321 13.5 13.5 16.6657 13.5 20.557V33.443C13.5 37.3343 16.6321 40.5 20.4821 40.5H34.4179C38.2679 40.5 41.4 37.3343 41.4 33.443V20.557C41.4 16.6657 38.2679 13.5 34.4179 13.5ZM15.9631 20.557C15.9631 18.0388 17.9906 15.9895 20.4821 15.9895H34.4179C36.9094 15.9895 38.9369 18.0388 38.9369 20.557V33.443C38.9369 35.9612 36.9094 38.0105 34.4179 38.0105H20.4821C17.9906 38.0105 15.9631 35.9612 15.9631 33.443V20.557Z"
-            fill="#27344F"
+            fill={pathFill}
         />
         <path
             d="M27.4502 33.5625C31.0304 33.5625 33.9448 30.6185 33.9448 26.9983C33.9448 23.3781 31.032 20.4341 27.4502 20.4341C23.8685 20.4341 20.9557 23.3781 20.9557 26.9983C20.9557 30.6185 23.8685 33.5625 27.4502 33.5625ZM27.4502 22.9252C29.6735 22.9252 31.4817 24.7528 31.4817 26.9999C31.4817 29.247 29.6735 31.0746 27.4502 31.0746C25.227 31.0746 23.4188 29.247 23.4188 26.9999C23.4188 24.7528 25.227 22.9252 27.4502 22.9252Z"
-            fill="#27344F"
+            fill={pathFill}
         />
         <path
             d="M34.5487 21.4947C35.5128 21.4947 36.2986 20.7021 36.2986 19.726C36.2986 18.75 35.5143 17.9574 34.5487 17.9574C33.583 17.9574 32.7988 18.75 32.7988 19.726C32.7988 20.7021 33.583 21.4947 34.5487 21.4947Z"
-            fill="#27344F"
+            fill={pathFill}
         />
     </svg>
 );
+
 export default IconInstagram;

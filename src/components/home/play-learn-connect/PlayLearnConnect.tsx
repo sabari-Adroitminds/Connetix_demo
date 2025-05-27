@@ -5,7 +5,7 @@ import MediaGrid from './MediaGrid'
 
 const PlayLearnConnect = () => {
   return (
-      <div className='max-w-[1550px] mx-auto px-6'>
+      <div className='max-w-[1550px] mx-auto md:px-6 '>
         <SocialStatsSection/>
         <MediaGrid/>
          
