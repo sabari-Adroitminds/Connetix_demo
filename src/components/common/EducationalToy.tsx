@@ -1,5 +1,5 @@
 'use client'
-import { FC } from "react";
+import { FC, useRef } from "react";
 import Robot from "./Robot";
 import IconFundamental from "../icons/educationalToy/IconFundamental";
 import IconLearnSteam from "../icons/educationalToy/IconLearnSteam";
@@ -7,7 +7,7 @@ import IconCreativity from "../icons/educationalToy/IconCreativity";
 import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
-import { motion } from "motion/react"
+import { Button } from "../ui/button";
 
 
 
@@ -41,8 +41,10 @@ const features = [
 
 const EducationalToy: FC = () => {
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]">
+    <div ref={containerRef} className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]">
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
       </div>
@@ -74,9 +76,11 @@ const EducationalToy: FC = () => {
             );
           })}
         </div>
+
+        <Button variant={'primary'} className='mt-10 px-6'>Find your perfect pack</Button>
       </div>
 
-        <Robot />
+        <Robot containerRef={containerRef}/>
       <Image 
         className="absolute -bottom-12 left-20 rotate-45" 
         src="/images/tiles/pink.png" 
