@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { FC, useRef } from "react";
 import Robot from "./Robot";
 import IconFundamental from "../icons/educationalToy/IconFundamental";
@@ -8,43 +8,49 @@ import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
 import { Button } from "../ui/button";
-
-
-
+import { useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 
 const features = [
   {
     id: 1,
     icon: IconLearnSteam,
     title: "Learn STEAM Concepts",
-    description: "Explore engineering, gravity, shape, colour & design, plus much more"
+    description:
+      "Explore engineering, gravity, shape, colour & design, plus much more",
   },
   {
     id: 2,
     icon: IconCreativity,
     title: "Encourage Creativity",
-    description: "Imagination and learning through play"
+    description: "Imagination and learning through play",
   },
   {
     id: 3,
     icon: IconMesh,
     title: "MESH Products",
-    description: "Promoting essential life skills with Mental, Emotional and Social Health"
+    description:
+      "Promoting essential life skills with Mental, Emotional and Social Health",
   },
   {
     id: 4,
     icon: IconFundamental,
     title: "Fundamental skills",
-    description: "Children's resilience and wellbeing at the forefront"
-  }
+    description: "Children's resilience and wellbeing at the forefront",
+  },
 ];
 
 const EducationalToy: FC = () => {
-
   const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   return (
-    <div ref={containerRef} className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]">
+    <div
+      ref={containerRef}
+      className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]"
+    >
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
       </div>
@@ -52,7 +58,7 @@ const EducationalToy: FC = () => {
       <div className="w-full absolute bottom-0 left-0 overflow-hidden">
         <Graphic />
       </div>
-      
+
       <div className="overflow-hidden z-20 max-w-[670px]">
         <h1 className="font-bold text-[32px] lg:text-[50px] text-navy">
           The educational toy bringing imagination to life!
@@ -62,7 +68,10 @@ const EducationalToy: FC = () => {
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.id} className="flex flex-col gap-[10px] lg:gap-4 w-fit lg:min-w-[300px] max-w-[175px] lg:max-w-[300px] flex-shrink-0">
+              <div
+                key={feature.id}
+                className="flex flex-col gap-[10px] lg:gap-4 w-fit lg:min-w-[300px] max-w-[175px] lg:max-w-[300px] flex-shrink-0"
+              >
                 <div className="flex flex-col lg:flex-row lg:items-center gap-[10px] lg:gap-4">
                   <Icon />
                   <span className="font-medium text-base lg:text-xl text-navy leading-6">
@@ -77,17 +86,24 @@ const EducationalToy: FC = () => {
           })}
         </div>
 
-        <Button variant={'primary'} className='mt-10 px-6'>Find your perfect pack</Button>
+        <Button variant={"primary"} className="mt-10 px-6">
+          Find your perfect pack
+        </Button>
       </div>
 
-        <Robot containerRef={containerRef}/>
-      <Image 
-        className="absolute -bottom-12 left-20 rotate-45" 
-        src="/images/tiles/pink.png" 
-        width={73} 
-        height={63} 
-        alt="pink-tile"
-      />
+      <Robot containerRef={containerRef} />
+      <motion.div
+        className="absolute -bottom-12 left-20"
+       style={{
+         rotate}}
+      >
+        <Image
+          src="/images/tiles/pink.png"
+          width={73}
+          height={63}
+          alt="pink-tile"
+        />
+      </motion.div>
     </div>
   );
 };
