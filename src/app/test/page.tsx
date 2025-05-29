@@ -12,6 +12,7 @@ import AwardWinning from "@/components/home/awards";
 import EducationalToy from "@/components/common/EducationalToy";
 import PreTitle from "@/components/common/PreTitle";
 import HomeSignUp from "@/components/home/HomeSignUp";
+import WhyConnetix from "@/components/home/whyConnetix";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -117,6 +118,9 @@ const Test = () => {
 
       <PreTitle title="Lorem ipsum dolor" />
       <HomeSignUp />
+
+        <WhyConnetix />
+
     </div>
   );
 };
