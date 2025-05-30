@@ -67,3 +67,48 @@ export const playTileData = [
     imageSrc:  articlesImage,
   },
 ];
+export const learnTileData = [
+  {
+    title: 'Our Story',
+    imageSrc: '',
+  },
+  {
+    title: 'Our Products',
+    imageSrc: '',
+  },
+  {
+    title: 'FAQs',
+    imageSrc: '',
+  },
+  {
+    title: 'In The News',
+    imageSrc: '',
+  },
+  {
+    title: 'Giving Back',
+    imageSrc: '',
+  },
+];
+
+export const connectTileData = [
+  {
+    title: 'Become a retailer',
+    imageSrc: '',
+  },
+  {
+    title: 'Partner with us',
+    imageSrc: '',
+  },
+  {
+    title: 'Education',
+    imageSrc: '',
+  },
+  {
+    title: 'Support',
+    imageSrc: '',
+  },
+  {
+    title: 'Community',
+    imageSrc: '',
+  },
+];
