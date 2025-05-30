@@ -1,5 +1,5 @@
 "use client";
-import { FC, useRef } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Robot from "./Robot";
 import IconFundamental from "../icons/educationalToy/IconFundamental";
 import IconLearnSteam from "../icons/educationalToy/IconLearnSteam";
@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { useScroll, useTransform } from "motion/react";
 import { motion } from "motion/react";
+import IconGalleryButton from "../icons/IconControlButton";
 
 const features = [
   {
@@ -41,10 +42,29 @@ const features = [
 ];
 
 const EducationalToy: FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
   const { scrollYProgress } = useScroll();
+  const cardRef = useRef<HTMLDivElement>(null);
 
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (cardRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = cardRef.current;
+      const progress = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+      setScrollProgress(Math.min(progress, 100));
+    }
+  };
+
+  const container = cardRef.current;
+  if (container) {
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
+  }
+}, []);
 
   return (
     <div
@@ -64,7 +84,7 @@ const EducationalToy: FC = () => {
           The educational toy bringing imagination to life!
         </h1>
 
-        <div className="flex lg:grid lg:grid-cols-2 lg:grid-rows-2 overflow-x-auto lg:overflow-hidden gap-10 mt-10 pb-4 lg:pb-0">
+        <div ref={cardRef} className="hide-scrollbar flex lg:grid lg:grid-cols-2 lg:grid-rows-2 overflow-x-auto lg:overflow-hidden gap-10 mt-10 pb-4 lg:pb-0">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
@@ -84,9 +104,46 @@ const EducationalToy: FC = () => {
               </div>
             );
           })}
+         
+        </div>
+        <div className="flex lg:hidden justify-between items-center mt-6 lg:mt-10">
+          {/* <button
+           onClick={() => cardRef.current?.scrollBy({ left: -200, behavior: "smooth" })}
+            className="cursor-pointer "
+          >
+            <IconGalleryButton color={"var(--primary, #a855f7)"} />
+          </button> */}
+
+            <div className="flex-1 mx-4">
+            <div className="w-full bg-purple-300 h-[1px] relative overflow-visible">
+              <div 
+              className="bg-purple-600 h-[1px]"
+              style={{
+                width: `${scrollProgress}%`,
+                transition: "width 0.5s cubic-bezier(0.4,0,0.2,1)"
+              }}
+              ></div>
+              <div
+              className="absolute top-0 w-4 h-[1px] bg-purple-600 flex items-center justify-center"
+              style={{
+                left: `calc(${scrollProgress}% - 8px)`,
+                transition: "left 0.5s cubic-bezier(0.4,0,0.2,1)"
+              }}
+              >
+              <div className="w-0 h-[1px] border-l-2 border-r-2 border-t-2 border-transparent border-t-purple-600 transform rotate-90"></div>
+              </div>
+            </div>
+            </div>
+
+          <button
+            onClick={() => cardRef.current?.scrollBy({ left: 200, behavior: "smooth" })}
+            className="cursor-pointer rotate-180"
+          >
+            <IconGalleryButton color={"var(--primary, #a855f7)"} />
+          </button>
         </div>
 
-        <Button variant={"primary"} className="mt-10 px-6">
+          <Button  variant={"primary"} className="mt-10 px-6">
           Find your perfect pack
         </Button>
       </div>

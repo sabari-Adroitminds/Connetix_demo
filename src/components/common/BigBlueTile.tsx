@@ -1,37 +1,11 @@
 import * as React from "react";
-import {motion, useMotionValue, useSpring} from "motion/react"
-const BigBlueTile: React.FC = (props) =>{
+import {motion} from "motion/react"
+import { IIconProps } from "@/types/intetrfaces";
 
-   const rotateX = useMotionValue(0);
-  const rotateY = useMotionValue(0);
-  
-  // Add spring animation for smooth movement
-  const springRotateX = useSpring(rotateX, { damping: 20, stiffness: 300 });
-  const springRotateY = useSpring(rotateY, { damping: 20, stiffness: 300 });
-
-  React.useEffect(() => {
-    const handleMouseMove = (e) => {
-      // Get viewport dimensions
-      const { innerWidth, innerHeight } = window;
-      
-      // Calculate rotation based on cursor position
-      // Map cursor position to rotation values (-80 to 80 degrees)
-      const xRotation = ((e.clientY - innerHeight / 2) / innerHeight) * 160 - 80;
-      const yRotation = ((e.clientX - innerWidth / 2) / innerWidth) * 160 - 80;
-      
-      // Update motion values
-      rotateX.set(xRotation);
-      rotateY.set(yRotation);
-    };
-
-    // Add event listener
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [rotateX, rotateY]);
+interface BigBlueTileProps extends IIconProps {
+ rotateAngle: number
+}
+const BigBlueTile: React.FC<BigBlueTileProps> = ({rotateAngle, ...props}) =>{
 
     
    return (
@@ -43,11 +17,11 @@ const BigBlueTile: React.FC = (props) =>{
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <motion.g   style={{
-          // rotateX: springRotateX,
-          rotateY: springRotateY,
-          transformOrigin: "center"
-        }}>
+    <motion.g   
+     animate={{
+       rotate:rotateAngle
+     }}
+        >
     <path
       d="M279.723 565.374L3.93694 293.22C-0.737404 288.607 -0.737372 281.176 3.80712 276.563L3.93694 276.435L279.723 4.40915C284.397 -0.203629 291.928 -0.203628 296.603 4.28102L296.732 4.40915L572.518 276.563C577.193 281.176 577.193 288.607 572.648 293.22L572.518 293.348L296.732 565.374C292.058 569.987 284.527 570.115 279.723 565.374C279.853 565.502 279.853 565.374 279.723 565.374Z"
       fill="#00A7E1"
