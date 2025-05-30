@@ -6,6 +6,7 @@ import IconRivets from "@/components/icons/whyConnetix/IconRivets";
 import IconSafe from "@/components/icons/whyConnetix/IconSafe";
 import React from "react";
 import { motion } from "motion/react";
+import CardSlider from "./CardSlider";
 // import CardSlider from "./CardSlider";
 
 const WhyConnetix = () => {
@@ -29,7 +30,7 @@ const WhyConnetix = () => {
       </div>
 
       <div className="flex items-center justify-center gap-10 mb-10 flex-wrap lg:flex-nowrap">
-        <div className="flex max-w-[275px] flex-col h-[510px] justify-between">
+        <div className="hidden lg:flex max-w-[275px] flex-col h-[510px] justify-between">
           <motion.div
             onMouseEnter={() => setAngle(200)}
             onMouseLeave={() => setAngle()}
@@ -70,7 +71,7 @@ const WhyConnetix = () => {
           <BigBlueTile className="w-[300px] h-[300px] lg:w-[700px] lg:h-[700px]" rotateAngle={rotateAngle} />
         </div>
 
-        <div className="max-w-[275px] flex flex-col h-[510px] justify-between">
+        <div className="hidden max-w-[275px] lg:flex flex-col h-[510px] justify-between">
           <motion.div
             onMouseEnter={() => setAngle(150)}
             onMouseLeave={() => setAngle()}
@@ -109,11 +110,9 @@ const WhyConnetix = () => {
         </div>
       </div>
 
-      <div>
-        
+      <div className=" block lg:hidden">
+        <CardSlider />
       </div>
-
-      {/* <CardSlider /> */}
     </div>
   );
 };
