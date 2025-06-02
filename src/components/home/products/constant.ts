@@ -1,47 +1,7 @@
-import clearTilesImage from '../../../../public/images/products/Clear Tiles.png';
-import roadsTransportImage from '../../../../public/images/products/Roads & Transport.png';
-import pastelTilesImage from '../../../../public/images/products/Pastel Tiles.png';
-import rainbowTilesImage from '../../../../public/images/products/Rainbow Tiles.png';
-import ballRunsImage from '../../../../public/images/products/Ball Runs.png';
-
-
-
 export const connetixPacks = [
-    // {
-    //     image: rainbowRoadsImage,
-    //     title: "Rainbow Roads Pack",
-    //     description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
-    //     buttonLabel: "Shop range",
-    //     diamondColor: "bg-gray-100",
-    //     diamondHoverColor: "group-hover:bg-gray-900",
-    //     buttonColor: "bg-gray-300",
-    //     buttonHoverColor: "group-hover:bg-gray-400",
-    //     buttonTextColor: "text-gray-900",
-    // },
-    // {
-    //     image: basePlateImage,
-    //     title: "Base Plate Pack",
-    //     description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
-    //     buttonLabel: "Shop range",
-    //     diamondColor: "bg-pink-100",
-    //     diamondHoverColor: "group-hover:bg-pink-900",
-    //     buttonColor: "bg-pink-300",
-    //     buttonHoverColor: "group-hover:bg-pink-400",
-    //     buttonTextColor: "text-pink-900",
-    // },
-    // {
-    //     image: rainbowGeometricImage,
-    //     title: "Rainbow Geometric Pack",
-    //     description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
-    //     buttonLabel: "Shop range",
-    //     diamondColor: "bg-pink-100",
-    //     diamondHoverColor: "group-hover:bg-pink-900",
-    //     buttonColor: "bg-pink-300",
-    //     buttonHoverColor: "group-hover:bg-pink-400",
-    //     buttonTextColor: "text-pink-900",
-    // },
+  
     {
-        image: clearTilesImage,
+        image: '/images/products/Clear Tiles.png',
         title: "Clear Tiles",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",
@@ -51,19 +11,8 @@ export const connetixPacks = [
         buttonHoverColor: "group-hover:bg-blue-tint",
         buttonTextColor: "text-blue-900",
     },
-    // {
-    //     image: rainbowCreativeImage,
-    //     title: "Rainbow Creative",
-    //     description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
-    //     buttonLabel: "Shop range",
-    //     diamondColor: "bg-green-100",
-    //     diamondHoverColor: "group-hover:bg-green-900",
-    //     buttonColor: "bg-green-300",
-    //     buttonHoverColor: "group-hover:bg-green-400",
-    //     buttonTextColor: "text-green-900",
-    // },
     {
-        image: roadsTransportImage,
+        image: '/images/products/Roads & Transport.png',
         title: "Roads & Transport",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",
@@ -74,7 +23,7 @@ export const connetixPacks = [
         buttonTextColor: "",
     },
     {
-        image: pastelTilesImage,
+        image: '/images/products/Pastel Tiles.png',
         title: "Pastel Tiles",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",
@@ -85,7 +34,7 @@ export const connetixPacks = [
         buttonTextColor: "text-teal-900",
     },
     {
-        image: rainbowTilesImage,
+        image: '/images/products/Rainbow Tiles.png',
         title: "Rainbow Tiles",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",
@@ -96,7 +45,7 @@ export const connetixPacks = [
         buttonTextColor: "text-purple-900",
     },
     {
-        image: ballRunsImage,
+        image: '/images/products/Ball Runs.png',
         title: "Ball Runs",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",

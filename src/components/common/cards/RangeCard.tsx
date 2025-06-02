@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { Button } from "@/components/ui/button";
 
 interface RangeCardProps {
-  image: StaticImageData;
+  image: StaticImageData|string;
   title: string;
   description: string;
   buttonLabel: string;

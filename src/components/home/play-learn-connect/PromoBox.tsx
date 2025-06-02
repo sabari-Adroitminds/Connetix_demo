@@ -12,15 +12,9 @@ const PromoBox: React.FC = () => {
             </div>
             <IconPromoBox className='absolute  -bottom-25 md:top-0 lg:top-20 xl:top-0 left-0  w-full   lg:h-[400px] xl:h-full' />
             <div className=" relative mt-4 flex justify-center flex-wrap gap-2">
-                <Button className=' w-full md:max-w-[194px]'>
-                    Be inspired
-                </Button>
-                <Button className=' w-full md:max-w-[194px]'>
-                    Build ideas
-                </Button>
-                <Button className=' w-full md:max-w-[194px]' >
-                    Free resources
-                </Button>
+                <Button className="w-full md:max-w-[194px]">Be inspired</Button>
+                <Button className="w-full md:max-w-[194px]">Build ideas</Button>
+                <Button className="w-full md:max-w-[194px]">Free resources</Button>
             </div>
 
         </div>

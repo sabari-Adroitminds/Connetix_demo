@@ -1,24 +1,10 @@
-
-
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import clsx from 'clsx'
 import { Button } from '@/components/ui/button'
 import PreTitle from '@/components/common/PreTitle'
+import { HeroImageCardProps } from '@/types/intetrfaces'
 
-interface HeroImageCardProps {
-  title: string
-  subtitle?: string
-  description: string
-  descriptionForSmallScreens: string
-  buttonText: string
-  bgColorClass?: string
-  titleColorClass?: string
-  subtitleColorClass?: string
-  descriptionColorClass?: string
-  buttonColorClass: 'default' | 'primary' | 'primaryTint' | 'primaryLight' | 'secondary' | 'secondaryTint' | 'secondaryLight' | 'blue' | 'blueTint' | 'blueLight' | 'teal' | 'tealTint' | 'tealLight' | 'yellow' | 'yellowTint' | 'yellowLight' | 'pink' | 'pinkTint' | 'pinkLight' | 'watermelon' | 'watermelonTint' | 'watermelonLight' | 'charcoal' | 'charcoalTint' | 'charcoalLight' | 'destructive'
-  buttonHoverColorClass?: string
-  image: StaticImageData
-}
+
 
 export default function HeroImageCard({
   title,
@@ -41,39 +27,37 @@ export default function HeroImageCard({
         <div className="flex xl:flex-4/12 items-center justify-center md:w-[100%] w-[366px] max-h-[80vh] h-[273px] p-[30px] align-center ">
           <div className="lg:w-[421px] w-full flex flex-col items-center lg:items-start justify-center px-4 gap-6 md:text-left mb-8 md:mb-0">
             {subtitle && (
-            
-              <PreTitle className='hidden lg:flex' title={subtitle} color={subtitleColorClass}/>
+              <PreTitle className='hidden lg:flex' title={subtitle} color={subtitleColorClass} />
             )}
-            <p className={clsx(' text-[32px]/[32px] md:text-[45px]/[45px] lg:text-[70px]/[70px] font-[400]  text-center lg:text-start', titleColorClass)}>
+            <p className={clsx(' text-[32px] leading-[32px] md:text-[45px] md:leading-[45px] lg:text-[70px] lg:leading-[70px] font-[400] text-center lg:text-start', titleColorClass)}>
               {title}
             </p>
-            <p  className={clsx('text-[14px] md:text-[16px] font-light  text-font/80  hidden lg:block', )}>
-            
+            <p className='text-[14px] md:text-[16px] font-light  text-font/80  hidden lg:block'>
+
               {description}
             </p>
-            <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>   
+            <p className={clsx('text-[14px] md:text-lg text-center lg:hidden block', descriptionColorClass)}>
               {descriptionForSmallScreens}
             </p>
             <Button
               variant={buttonColorClass}
-              className={clsx(
-
-                ' h-[50px] w-[224px] min-[150px]'
-              )}
+              className='h-[50px] w-[224px] min-w-[150px]'
             >
               {buttonText}
             </Button>
           </div>
         </div>
         {/* Image Section */}
-      
-          <Image
-            src={image}
-            alt={title}
+
+        <Image
+        width={1000}
+        height={1000}
+          src={image}
+          alt={title}
           className="object-cover w-full    lg:h-[851px]  md:h-[500px] max-h-[80vh]    h-[380px]  "
-            priority
-          />
-       
+          priority
+        />
+
       </div>
     </div>
   )
