@@ -115,7 +115,7 @@ const Test = () => {
       <h5>Test</h5>
       <h6>Test</h6>
 
-      <PreTitle title="Lorem ipsum dolor" />
+      <PreTitle title="Lorem ipsum dolor" color={""} />
       <HomeSignUp />
     </div>
   );

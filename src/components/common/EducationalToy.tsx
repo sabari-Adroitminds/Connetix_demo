@@ -7,7 +7,7 @@ import IconCreativity from "../icons/educationalToy/IconCreativity";
 import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
-import { motion } from "motion/react"
+
 
 
 
