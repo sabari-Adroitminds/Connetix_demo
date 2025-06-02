@@ -7,10 +7,14 @@ import IconCreativity from "../icons/educationalToy/IconCreativity";
 import IconMesh from "../icons/educationalToy/IconMesh";
 import Graphic from "./Graphic";
 import Image from "next/image";
-import { Button } from "../ui/button";
 import { useScroll, useTransform } from "motion/react";
-import { motion } from "motion/react";
 import IconGalleryButton from "../icons/IconControlButton";
+import { Button } from "../ui/button";
+import { motion } from "motion/react";
+
+
+
+
 
 const features = [
   {

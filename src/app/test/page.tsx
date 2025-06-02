@@ -12,7 +12,6 @@ import AwardWinning from "@/components/home/awards";
 import EducationalToy from "@/components/common/EducationalToy";
 import PreTitle from "@/components/common/PreTitle";
 import HomeSignUp from "@/components/home/HomeSignUp";
-import WhyConnetix from "@/components/home/whyConnetix";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -116,11 +115,8 @@ const Test = () => {
       <h5>Test</h5>
       <h6>Test</h6>
 
-      {/* <PreTitle title="Lorem ipsum dolor" /> */}
-      {/* <HomeSignUp /> */}
-
-        <WhyConnetix />
-
+      <PreTitle title="Lorem ipsum dolor" color={""} />
+      <HomeSignUp />
     </div>
   );
 };
