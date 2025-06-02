@@ -2,7 +2,12 @@ import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
 
 
-const IconGalleryButton:React.FC<IIconProps> = ({color, ...props}) => (
+interface IIconGalleryButtonProps extends IIconProps {
+  color?: string;
+  tintedButton?: boolean;
+}
+
+const IconGalleryButton:React.FC<IIconGalleryButtonProps> = ({color, tintedButton, ...props}) => (
   <svg
     width={40}
     height={40}
@@ -16,7 +21,7 @@ const IconGalleryButton:React.FC<IIconProps> = ({color, ...props}) => (
       <g clipPath="url(#clip1_1_2)">
         <path
           d="M39.3857 18.5169C40.2048 19.336 40.2048 20.664 39.3857 21.4831L21.4831 39.3857C20.664 40.2048 19.336 40.2048 18.5169 39.3857L0.614319 21.4831C-0.204773 20.664 -0.204773 19.336 0.614319 18.5169L18.5169 0.614319C19.336 -0.204773 20.664 -0.204772 21.4831 0.614319L39.3857 18.5169Z"
-          fill={color || "white"}
+          fill={tintedButton ? color : "white"}
           opacity={0.1}
         />
         <path

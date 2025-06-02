@@ -8,6 +8,7 @@ import IconSafe from "@/components/icons/whyConnetix/IconSafe";
 import React from "react";
 import { motion } from "motion/react";
 import CardSlider from "./CardSlider";
+import IconLine from "@/components/icons/whyConnetix/IconLine";
 // import CardSlider from "./CardSlider";
 
 const WhyConnetix = () => {
@@ -69,14 +70,18 @@ const WhyConnetix = () => {
           </motion.div>
         </div>
         <div className="relative flex-1 flex items-center justify-center hover:cursor-grab">
+          <IconLine className="absolute top-[160px]  hidden lg:block" />
           <BigBlueTile
             className="
+              z-10
               w-[300px] h-[300px]
               lg:!w-[400px] lg:!h-[400px]
               xl:!w-[700px] xl:!h-[700px]
             "
             rotateAngle={rotateAngle}
           />
+          <IconLine className="absolute hidden lg:block bottom-[200px]" />
+
         </div>
 
         <div className="hidden max-w-[275px] lg:flex flex-col h-[510px] justify-between">

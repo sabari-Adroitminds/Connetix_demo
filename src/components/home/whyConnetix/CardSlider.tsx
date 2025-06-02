@@ -109,7 +109,7 @@ const CardSlider = () => {
             onClick={() => cardRef.current?.scrollBy({ left: 200, behavior: "smooth" })}
             className="cursor-pointer rotate-180"
           >
-            <IconGalleryButton color={"var(--primary, #a855f7)"} />
+            <IconGalleryButton tintedButton={true} color={"var(--primary, #a855f7)"} />
           </button>
         </div>
       </div>
