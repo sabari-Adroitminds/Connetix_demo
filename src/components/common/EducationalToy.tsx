@@ -69,7 +69,7 @@ useEffect(() => {
   return (
     <div
       ref={containerRef}
-      className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:p-[70px]"
+      className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
     >
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
@@ -79,8 +79,8 @@ useEffect(() => {
         <Graphic />
       </div>
 
-      <div className="overflow-hidden z-20 max-w-[670px]">
-        <h1 className="font-bold text-[32px] lg:text-[50px] text-navy">
+      <div className="overflow-hidden z-20 max-w-[720px]">
+        <h1 className="font-bold !text-[32px] lg:!text-[50px] text-navy">
           The educational toy bringing imagination to life!
         </h1>
 
@@ -107,13 +107,6 @@ useEffect(() => {
          
         </div>
         <div className="flex lg:hidden justify-between items-center mt-6 lg:mt-10">
-          {/* <button
-           onClick={() => cardRef.current?.scrollBy({ left: -200, behavior: "smooth" })}
-            className="cursor-pointer "
-          >
-            <IconGalleryButton color={"var(--primary, #a855f7)"} />
-          </button> */}
-
             <div className="flex-1 mx-4">
             <div className="w-full bg-purple-300 h-[1px] relative overflow-visible">
               <div 
@@ -148,7 +141,7 @@ useEffect(() => {
         </Button>
       </div>
 
-      <Robot containerRef={containerRef} />
+      <Robot containerRef={containerRef} className="mt-10 lg:mt-0" />
       <motion.div
         className="absolute -bottom-12 left-20"
        style={{

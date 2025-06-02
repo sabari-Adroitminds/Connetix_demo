@@ -31,7 +31,7 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
     };
 
     const handleMouseEnter = () => {
-      setStopAnimation(true);
+      // setStopAnimation(true);
       isHovering = true;
     };
 

@@ -1,3 +1,4 @@
+"use client";
 import BigBlueTile from "@/components/common/BigBlueTile";
 import PreTitle from "@/components/common/PreTitle";
 import IconBevel from "@/components/icons/whyConnetix/IconBevel";
@@ -68,7 +69,14 @@ const WhyConnetix = () => {
           </motion.div>
         </div>
         <div className="relative flex-1 flex items-center justify-center hover:cursor-grab">
-          <BigBlueTile className="w-[300px] h-[300px] lg:w-[700px] lg:h-[700px]" rotateAngle={rotateAngle} />
+          <BigBlueTile
+            className="
+              w-[300px] h-[300px]
+              lg:!w-[400px] lg:!h-[400px]
+              xl:!w-[700px] xl:!h-[700px]
+            "
+            rotateAngle={rotateAngle}
+          />
         </div>
 
         <div className="hidden max-w-[275px] lg:flex flex-col h-[510px] justify-between">

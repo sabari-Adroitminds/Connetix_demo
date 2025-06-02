@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import IconGalleryButton from '@/components/icons/IconControlButton';
 import IconMagnet from '@/components/icons/whyConnetix/IconMagnet';
