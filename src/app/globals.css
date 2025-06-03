@@ -257,7 +257,13 @@ h6{
   @apply lg:text-[28px] lg:leading-[34px];
 }
 
-
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
   
 
