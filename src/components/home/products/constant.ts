@@ -12,7 +12,7 @@ export const connetixPacks = [
         buttonTextColor: "text-blue-900",
     },
     {
-        image: '/images/products/Roads & Transport.png',
+        image: '/images/products/Roads_Transport.png',
         title: "Roads & Transport",
         description: "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
         buttonLabel: "Shop range",

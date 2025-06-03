@@ -1,5 +1,5 @@
 "use client";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, Suspense, useEffect, useRef, useState } from "react";
 import Robot from "./Robot";
 import IconFundamental from "../icons/educationalToy/IconFundamental";
 import IconLearnSteam from "../icons/educationalToy/IconLearnSteam";
@@ -73,7 +73,7 @@ useEffect(() => {
   return (
     <div
       ref={containerRef}
-      className="relative bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
+      className="relative mt-25 bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
     >
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
@@ -144,8 +144,9 @@ useEffect(() => {
           Find your perfect pack
         </Button>
       </div>
-
+      <Suspense fallback={<>...</>}>
       <Robot containerRef={containerRef} className="mt-10 lg:mt-0" />
+      </Suspense>
       <motion.div
         className="absolute -bottom-12 left-20"
        style={{

@@ -19,7 +19,7 @@ const Images = [
 
 const AwardWinning: FC = () => {
   return (
-    <motion.div className="flex flex-col gap-[60px]">
+    <motion.div className="flex flex-col gap-[60px] mt-20 mb-40">
       <h3 className="text-xl font-medium text-navy text-center">
         Award Winning
       </h3>
