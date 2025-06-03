@@ -78,6 +78,7 @@ const Slider: FC<SliderProps> = ({
      
           {buttonBorderColors.map((_, index) => (
             <button
+              aria-label="switch slide"
               key={`navigation-dot-${index}`}
               onClick={() => scrollTo(index)}
               className={cn(
