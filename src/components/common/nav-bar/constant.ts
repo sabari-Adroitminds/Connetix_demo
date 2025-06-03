@@ -2,7 +2,7 @@ import rainbowTilesImage from '../../../../public/images/nav/Nav Rainbow Tiles.p
 import pastelTilesImage from '../../../../public/images/nav/Nav Pastel Tiles.png';
 import clearTilesImage from '../../../../public/images/nav/Nav Clear Tiles.png';
 import ballRunsImage from '../../../../public/images/nav/Nav Ball Runs.png';
-import roadsTransportImage from '../../../../public/images/nav/Nav Roads & Transport.png';
+import roadsTransportImage from '../../../../public/images/nav/Nav Roads_Transport.png';
 import basePlatesImage from '../../../../public/images/nav/Nav Base Plates.png';
 
 import explorePlayZoneImage from '../../../../public/images/nav/Nav-PlayExplore Play Zone.png';
@@ -31,7 +31,7 @@ export const shopTileData = [
     imageSrc: ballRunsImage,
   },
   {
-    title: 'Roads & Transport',
+    title: 'Roads_Transport',
     imageSrc: roadsTransportImage,
   },
   {
