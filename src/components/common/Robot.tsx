@@ -230,12 +230,12 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
       <motion.g
         className={"tile-yellow"}
         initial={{ y: 55 }}
-        animate={{ y: clawDown ? [55, 10, 55] : 55 }}
+        animate={{ y: clawDown ? [55, 0] : 55 }}
         transition={{
-          duration: clawDown ? 8 : 0.5,
+          duration: clawDown ? 4 : 0.5,
           delay: 1,
-          repeat: clawDown ? Infinity : 0,
-          repeatType: "reverse",
+          // repeat: clawDown ? Infinity : 0,
+          // repeatType: "reverse",
           ease: "easeInOut",
         }}
         filter="url(#filter2_d_4621_44154)"
