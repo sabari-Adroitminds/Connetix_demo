@@ -45,7 +45,8 @@ const AwardWinning: FC = () => {
           transition={{ duration: 1, delay: index * 0.1 }}
         >
           <Image
-            className={clsx(
+          loading="lazy"
+          className={clsx(
           "w-full h-full object-contain grayscale opacity-55",
           [2, 3, 4].includes(index) && "!opacity-100"
             )}
