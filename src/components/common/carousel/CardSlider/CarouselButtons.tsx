@@ -34,6 +34,7 @@ const CarouselButtons: FC<CarouselButtonsProps> = ({
         title={previousLabel}
         type="button"
         aria-label={previousLabel}
+
       >
         <ArrowLeft className="h-6 w-6" strokeWidth={1.5} />
       </button>
