@@ -25,7 +25,7 @@ const WhyConnetix = () => {
   return (
     <div className="px-5 lg:px-[100px] flex flex-col justify-center">
       <div className="flex flex-col items-center justify-center gap-5 mb-8">
-        <PreTitle title="Why Connetix?" color="bg-primary" />
+        <PreTitle title="Why Connetix?" color="bg-secondary" />
         <span className="text-[30px] md:text-[40px] lg:text-[60px] text-navy font-medium">
           Superior Quality & Safety
         </span>
