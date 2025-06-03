@@ -1,9 +1,9 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx'
 import { Button } from '@/components/ui/button'
 import PreTitle from '@/components/common/PreTitle'
 import { HeroImageCardProps } from '@/types/intetrfaces'
-import { Suspense } from 'react'
+import Image from 'next/image'
 
 
 
@@ -49,16 +49,19 @@ export default function HeroImageCard({
           </div>
         </div>
         {/* Image Section */}
-        <Suspense fallback={<div className='w-full lg:h-[851px] md:h-[500px] max-h-[80vh] h-[380px] ' >Loading...</div>}>
+
         <Image
-        width={1000}
-        height={1000}
+        width={280}
+        height={50}
           src={image}
           alt={title}
           className="object-cover w-full lg:h-[851px] md:h-[500px] max-h-[80vh] h-[380px]  "
-          fetchPriority='high'
+         priority
+          placeholder="blur"
+          blurDataURL="/images/blurImage.jpg"
+          loading="eager"
         />
-          </Suspense >
+
       </div>
     </div>
   )
