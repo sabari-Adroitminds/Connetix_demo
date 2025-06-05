@@ -12,15 +12,15 @@ type ProductCardProps = {
 
 const ProductCard: FC<ProductCardProps> = ({ title, price, imageUrl, isNew = false, reviews }) => {
   return (
-    <div className=" w-[176px] md:w-[496px]  rounded-xl pb-2  text-center relative bg-white">
+    <div className=" w-[176px] md:max-w-[496px] md:w-full  rounded-xl pb-2  text-center flex flex-col items-center  justify-center relative bg-white">
 
-      <div className="w-[176px] md:w-[496px] h-[149px] md:h-[428px] border border-off-white rounded-xl flex justify-center mb-4">
+      <div className="w-[176px] md:w-full md:max-w-[496px] h-[149px] md:max-h-[428px] md:h-full border border-off-white rounded-xl flex justify-center mb-4">
         {isNew && (
           <span className="absolute top-2 left-2 md:top-4 md:left-4 bg-green text-white text-xs font-semibold px-2 py-1 rounded-full">
             NEW
           </span>
         )}
-        <Image src={imageUrl} alt={title} className="rounded-lg object-contain" />
+        <Image width={450} height={450} src={imageUrl} alt={title} className="rounded-lg object-fill" />
       </div>
       <h2 className="text-lg font-medium">{title}</h2>
       <p className="text-gray-800 font-semibold mt-1">{price}</p>

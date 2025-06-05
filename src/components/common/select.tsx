@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import CheckBox from './inputs/CheckBox';
 
 type SortBySelectProps = {
   label: string;
@@ -18,14 +19,19 @@ const SortBySelect = ({ label, options }: SortBySelectProps) => {
   };
 
   return (
-    <div className="relative w-64">
+    <div className="relative max-w-[320px] w-full h-[50px]">
       {/* Trigger */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full h-[50px] flex justify-between items-center px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <span>{selected ? `${label}: ${selected}` : label}</span>
+        <div>{selected ? <>
+        {<><span className='font-medium'>{label}</span>
+        <span> {selected}</span></>}
+        </> 
+        : <span className='font-medium'>{label}</span> }
+        </div>
         <ChevronDown className="w-4 h-4" />
       </button>
 
@@ -37,13 +43,7 @@ const SortBySelect = ({ label, options }: SortBySelectProps) => {
               key={option}
               className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
             >
-              <input
-                type="checkbox"
-                className="form-checkbox text-blue-600 mr-2"
-                checked={selected === option}
-                onChange={() => handleSelect(option)}
-              />
-              <span className="text-sm text-gray-800">{option}</span>
+              <CheckBox label={option} checked={selected === option} onChange={() => handleSelect(option)} />
             </label>
           ))}
         </div>

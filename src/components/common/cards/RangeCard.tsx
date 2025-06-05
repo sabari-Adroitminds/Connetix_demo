@@ -42,7 +42,7 @@ const RangeCard: FC<RangeCardProps> = ({
             src={image}
             alt={title}
             fill
-            className="object-fill transform transition-transform duration-500"
+            className="object-contain transform transition-transform duration-500"
             
           />
         </div>
