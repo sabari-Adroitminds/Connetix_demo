@@ -34,7 +34,7 @@ const WhyConnetix = () => {
       <div className="flex items-center justify-center gap-10 mb-10 flex-wrap lg:flex-nowrap">
         <div className="hidden lg:flex max-w-[275px] flex-col h-[510px] justify-between">
           <motion.div
-            onMouseEnter={() => setAngle(200)}
+            onMouseEnter={() => setAngle(-70)}
             onMouseLeave={() => setAngle()}
             initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
@@ -52,7 +52,7 @@ const WhyConnetix = () => {
           </motion.div>
 
           <motion.div
-            onMouseEnter={() => setAngle(150)}
+            onMouseEnter={() => setAngle(-120)}
             onMouseLeave={() => setAngle()}
             initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
@@ -86,7 +86,7 @@ const WhyConnetix = () => {
 
         <div className="hidden  lg:flex flex-col h-[510px] justify-between">
           <motion.div
-            onMouseEnter={() => setAngle(150)}
+            onMouseEnter={() => setAngle(60)}
             onMouseLeave={() => setAngle()}
             initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
@@ -104,7 +104,7 @@ const WhyConnetix = () => {
           </motion.div>
 
           <motion.div
-            onMouseEnter={() => setAngle(300)}
+            onMouseEnter={() => setAngle(120)}
             onMouseLeave={() => setAngle()}
             initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
