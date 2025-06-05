@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 interface RangeCardProps {
   image: StaticImageData|string;
+  imageStyle?:string,
   title: string;
   description: string;
   buttonLabel: string;
@@ -17,6 +18,7 @@ interface RangeCardProps {
 
 const RangeCard: FC<RangeCardProps> = ({
   image,
+  imageStyle,
   title,
   description,
   buttonLabel,
@@ -37,22 +39,23 @@ const RangeCard: FC<RangeCardProps> = ({
             diamondHoverColor
           )}
         />
-        <div className="relative  md:top-0 md:w-[490px] md:h-[428px]  w-[289px] h-[283px] z-10 group-hover:scale-105 transition-transform duration-500">
+        <div className=" flex items-center justify-center md:w-[490px] md:h-[428px]  w-[289px] h-[283px] z-10 group-hover:scale-105 transition-transform duration-500">
           <Image
             src={image}
             alt={title}
-            fill
-            className="object-contain  max-w-[490px] transform transition-transform duration-500"
+            width={490}
+            height={428}
+            className={clsx("object-contain relative   md:w-[400px] md:h-[428px]  w-[289px] h-[283px] transform transition-transform duration-500", imageStyle)}
             
           />
         </div>
-        <h2 className="text-2xl font-light text-font/20 mt-6 z-10">
+        <h2 className="text-[24px]/[30px] font-light text-font/20 mt-6 z-10 tracking-[-0.25px]">
           {title}
         </h2>
-        <p className="text-sm text-gray-600 mt-2 z-10 md:max-w-96 max-w-72">{description}</p>
+        <p className="text-[16px]/[22px] text-center text-gray-600 mt-2 z-10 w-fit max-w-[418px] font-extralight">{description}</p>
         <Button
           className={clsx(
-            "mt-6 font-semibold py-2 px-4 rounded-full transition-colors z-10",
+            "mt-6 font-semibold py-2 px-4 rounded-full transition-colors z-10 w-[200px]",
             buttonColor,
             buttonHoverColor,
             buttonTextColor,

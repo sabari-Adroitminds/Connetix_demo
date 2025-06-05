@@ -32,7 +32,7 @@ export default function HeroImageCard({
             <p className={clsx(' text-[32px] leading-[32px] md:text-[45px] md:leading-[45px] lg:text-[70px] lg:leading-[70px] font-[400] text-center lg:text-start', titleColorClass)}>
               {title}
             </p>
-            <p className='text-[14px] md:text-[16px] font-light  text-font/80  hidden lg:block'>
+            <p className='text-[14px] md:text-[16px] font-light  text-navy/80  hidden lg:block'>
 
               {description}
             </p>

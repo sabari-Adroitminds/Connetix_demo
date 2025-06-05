@@ -3,7 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('/fonts/gothamrnd_light.otf') format('opentype');
+  src: url('/fonts/Nunito-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/Nunito-SemiBold.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
@@ -24,7 +31,7 @@
 
 @font-face {
   font-family: 'MyCustomFont';
-  src: url('/fonts/gothamrnd_medium.otf') format('opentype');
+  src: url('/fonts/Nunito-Bold.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
