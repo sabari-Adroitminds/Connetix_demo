@@ -73,7 +73,7 @@ useEffect(() => {
   return (
     <div
       ref={containerRef}
-      className="relative mt-25 bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
+      className="relative mt-25 bg-primary-very-light h-fit lg:h-[940px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
     >
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
