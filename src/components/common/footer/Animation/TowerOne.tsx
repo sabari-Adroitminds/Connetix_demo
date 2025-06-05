@@ -16,7 +16,7 @@ const TowerOne = () => {
                 animate={{ opacity: 1, y: 0, x: 0, rotate: 0 }}
                 transition={{ duration:duration, delay: 5}}
             >
-                <TileGreenTriangleBig />
+                <TileGreenTriangleBig className='h-[156px] w-[73px]' />
             </motion.div>
             <motion.div initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
