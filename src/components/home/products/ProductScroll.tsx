@@ -6,7 +6,7 @@ const ProductScroll = () => {
     return (
         <>
             <Carousel>
-                <CarouselContent className='gap-4'>
+                <CarouselContent className='gap-6'>
                     {connetixPacks.map((pack, index) => (
                         <RangeCard
                             key={index}
