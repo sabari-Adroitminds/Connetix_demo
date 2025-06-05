@@ -93,15 +93,20 @@ const CardSlider = () => {
                 transition: "width 0.5s cubic-bezier(0.4,0,0.2,1)"
               }}
               ></div>
-              <div
-              className="absolute top-0 w-4 h-[1px] bg-purple-600 flex items-center justify-center"
-              style={{
-                left: `calc(${scrollProgress}% - 8px)`,
-                transition: "left 0.5s cubic-bezier(0.4,0,0.2,1)"
-              }}
-              >
-              <div className="w-0 h-[1px] border-l-2 border-r-2 border-t-2 border-transparent border-t-purple-600 transform rotate-90"></div>
-              </div>
+                <div
+                className="absolute top-0 h-[1px] rounded-full bg-gray-200 w-full overflow-hidden"
+                style={{ pointerEvents: "none" }}
+                >
+                <div
+                  className="absolute h-[2px] rounded-full bg-purple-600 overflow-hidden"
+                  style={{
+                  width: `${Math.max(20, scrollProgress)}%`,
+                  left: `${scrollProgress}%`,
+                  transform: "translateX(-20%)",
+                  transition: "left 0.5s cubic-bezier(0.4,0,0.2,1), width 0.5s cubic-bezier(0.4,0,0.2,1)"
+                  }}
+                />
+                </div>
             </div>
             </div>
 

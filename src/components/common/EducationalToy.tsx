@@ -73,7 +73,7 @@ useEffect(() => {
   return (
     <div
       ref={containerRef}
-      className="relative mt-25 bg-primary-very-light h-fit lg:h-[700px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
+      className="relative mt-25 bg-primary-very-light h-fit lg:h-[940px] rounded-[70px] flex flex-wrap lg:flex-nowrap items-center justify-center px-[21px] py-[71px] lg:px-20 lg:p-[70px]"
     >
       <div className="absolute top-0 right-0 rotate-180 hidden lg:block">
         <Graphic />
@@ -120,15 +120,20 @@ useEffect(() => {
                 transition: "width 0.5s cubic-bezier(0.4,0,0.2,1)"
               }}
               ></div>
-              <div
-              className="absolute top-0 w-4 h-[1px] bg-purple-600 flex items-center justify-center"
-              style={{
-                left: `calc(${scrollProgress}% - 8px)`,
-                transition: "left 0.5s cubic-bezier(0.4,0,0.2,1)"
-              }}
-              >
-              <div className="w-0 h-[1px] border-l-2 border-r-2 border-t-2 border-transparent border-t-purple-600 transform rotate-90"></div>
-              </div>
+                <div
+                className="absolute top-0 h-[1px] rounded-full bg-gray-200 w-full overflow-hidden"
+                style={{ pointerEvents: "none" }}
+                >
+                <div
+                  className="absolute h-[2px] rounded-full bg-purple-600 overflow-hidden"
+                  style={{
+                  width: `${Math.max(20, scrollProgress)}%`,
+                  left: `${scrollProgress}%`,
+                  transform: "translateX(-20%)",
+                  transition: "left 0.5s cubic-bezier(0.4,0,0.2,1), width 0.5s cubic-bezier(0.4,0,0.2,1)"
+                  }}
+                />
+                </div>
             </div>
             </div>
 
@@ -139,10 +144,12 @@ useEffect(() => {
             <IconGalleryButton color={"var(--primary, #a855f7)"} />
           </button>
         </div>
-
-          <Button  variant={"primary"} className="mt-10 px-6">
+          <div className="flex justify-center items-center lg:justify-start mt-10 lg:mt-10">
+            
+          <Button  variant={"primary"} className=" px-6">
           Find your perfect pack
         </Button>
+          </div>
       </div>
       <Suspense fallback={<>...</>}>
       <Robot containerRef={containerRef} className="mt-10 lg:mt-0" />

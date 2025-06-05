@@ -1,6 +1,7 @@
 import { IIconProps } from "@/types/intetrfaces";
 import * as React from "react";
 import { motion } from "motion/react";
+import clsx from "clsx";
 
 interface IRobotProps extends IIconProps {
   containerRef: React.RefObject<HTMLDivElement>;
@@ -15,44 +16,52 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
   React.useEffect(() => {
     let animationFrame: number | undefined;
     let targetX = 0;
+    let targetY = 0;
     let currentX = 0;
+    let currentY = 0;
     let isHovering = false;
 
-    const handleMouseMove = (e: { clientX: number; }) => {
-      if (isHovering && containerRef.current) {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const containerCenterX = containerRect.left + containerRect.width / 2;
+    const maxDistance = 100;
 
-        const relativeX = e.clientX - containerCenterX;
-
-        const maxDistance = 70;
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isHovering && elementRef.current && containerRef.current) {
+        const elementRect = elementRef.current.getBoundingClientRect();
+        const elementCenterX = elementRect.left + elementRect.width / 2;
+        const elementCenterY = elementRect.top + elementRect.height / 2;
+        const relativeX = e.clientX - elementCenterX;
+        const relativeY = e.clientY - elementCenterY;
         targetX = Math.max(-maxDistance, Math.min(maxDistance, relativeX));
+        targetY = Math.max(-maxDistance, Math.min(maxDistance, relativeY));
       }
     };
 
     const handleMouseEnter = () => {
-      // setStopAnimation(true);
+      setStopAnimation(true);
       isHovering = true;
+      setClawDown(true);
     };
 
     const handleMouseLeave = () => {
       setStopAnimation(false);
       isHovering = false;
       targetX = 0;
+      targetY = 0;
+      if (elementRef.current) {
+        elementRef.current.style.transform = "";
+      }
     };
 
     const animate = () => {
-      if (elementRef.current && stopAnimation) {
-        currentX += (targetX - currentX) * 0.1;
-        elementRef.current.style.transform = `translateX(${currentX}px)`;
+      if (elementRef.current && isHovering) {
+        currentX += (targetX - currentX) * 0.15;
+        currentY += (targetY - currentY) * 0.15;
+        elementRef.current.style.transform = `translate(${currentX}px, ${currentY}px)`;
       }
-
       animationFrame = requestAnimationFrame(animate);
     };
 
     animate();
 
-    // Add event listeners to the container
     if (containerRef.current) {
       containerRef.current.addEventListener("mouseenter", handleMouseEnter);
       containerRef.current.addEventListener("mouseleave", handleMouseLeave);
@@ -61,21 +70,15 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
 
     return () => {
       if (containerRef.current) {
-        containerRef.current.removeEventListener(
-          "mouseenter",
-          handleMouseEnter
-        );
-        containerRef.current.removeEventListener(
-          "mouseleave",
-          handleMouseLeave
-        );
+        containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
+        containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
         containerRef.current.removeEventListener("mousemove", handleMouseMove);
       }
       if (animationFrame) {
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, []);
+  }, [containerRef]);
 
   return (
     <svg
@@ -232,7 +235,7 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
         initial={{ y: 55 }}
         animate={{ y: clawDown ? [55, 0] : 55 }}
         transition={{
-          duration: clawDown ? 4 : 0.5,
+          duration: clawDown ? 4 : 0.3,
           delay: 1,
           // repeat: clawDown ? Infinity : 0,
           // repeatType: "reverse",
@@ -295,10 +298,10 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
       </motion.g>
       <motion.g
         className={"green-hollow"}
-        animate={{ rotate: [7, 5, 0] }}
+        animate={!stopAnimation ? { rotate: [7, 5, 0] } : {rotate: 7 }}
         initial={{ rotate: 7 }}
         transition={{
-          duration: 4,
+          duration: 3.8,
           times: [0, 0.65, 1],
           delay: 3,
           repeat: Infinity,
@@ -420,7 +423,10 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
             setClawDown(true);
           }
         }}
-        className="tow z-50"
+        className={clsx("tow z-50",
+          stopAnimation ? "absolute" : "",
+        )
+        }
         ref={elementRef}
         d="M609.953 177.373C610.764 189.129 611.574 200.692 612.384 212.191H619.209V177.373H609.953ZM752.3 212.255C752.513 209.311 752.726 206.516 752.897 203.7C753.067 200.607 753.153 197.513 753.323 194.42C753.43 192.307 753.579 190.174 753.771 188.062C754.07 184.542 754.411 181.022 754.731 177.395H745.411V212.255H752.321H752.3ZM750.274 170.696C751.596 170.696 752.939 170.568 754.219 170.717C755.882 170.93 756.714 170.141 757.439 168.818C758.74 166.45 760.169 164.167 761.427 161.757C761.747 161.159 761.853 160.178 761.555 159.623C759.998 156.7 758.335 153.842 756.607 151.026C756.351 150.62 755.626 150.322 755.115 150.3C752.001 150.236 748.866 150.193 745.753 150.322C745.049 150.343 744.153 150.983 743.748 151.602C742.17 154.034 740.656 156.53 739.313 159.09C738.95 159.773 738.95 160.967 739.291 161.671C740.443 164.039 741.914 166.237 743.108 168.584C744.004 170.312 745.22 171.016 747.16 170.717C748.184 170.546 749.229 170.696 750.274 170.696ZM602.532 160.541C604.26 163.506 605.987 166.557 607.821 169.544C608.141 170.056 608.908 170.61 609.463 170.632C612.726 170.738 615.988 170.717 619.251 170.632C619.742 170.632 620.445 170.248 620.701 169.842C622.429 167.026 624.071 164.146 625.713 161.266C625.905 160.946 625.947 160.349 625.777 160.05C624.156 157.106 622.514 154.14 620.723 151.282C620.403 150.748 619.443 150.343 618.782 150.322C615.946 150.215 613.088 150.386 610.252 150.236C608.716 150.151 608.013 150.77 607.352 152.05C605.859 154.93 604.174 157.682 602.532 160.541ZM657.445 150.535H707.453C707.58 150.428 707.687 150.322 707.815 150.194V132.891H657.082V150.194C657.21 150.3 657.317 150.407 657.445 150.535ZM650.685 140.614C650.578 140.508 650.45 140.401 650.343 140.273C650.088 140.294 649.789 140.252 649.576 140.358C644.756 142.961 639.937 145.543 635.139 148.188C632.921 149.404 630.746 150.727 628.464 152.05C629.615 154.076 630.682 155.932 631.726 157.767C632.302 157.554 632.665 157.383 633.027 157.255C638.806 155.292 644.564 153.33 650.343 151.367L650.685 151.004V140.572M714.191 140.572C714.17 143.687 714.213 146.823 714.085 149.937C714.042 151.239 714.533 151.666 715.705 152.05C721.037 153.714 726.325 155.527 731.678 157.17C732.211 157.34 733.277 156.871 733.661 156.359C734.642 155.015 735.389 153.479 736.242 151.986C729.14 148.167 722.082 144.348 715.023 140.55C714.767 140.55 714.49 140.55 714.234 140.572M738.737 218.527C738.737 215.69 738.715 212.831 738.737 209.972C738.865 200.35 738.993 190.707 739.163 181.086C739.163 180.147 739.398 179.208 739.568 178.269C740.379 173.939 737.052 171.144 735.581 167.666C734.557 165.213 732.702 164.061 730.121 163.293C723.702 161.394 717.39 159.069 711.014 156.956C710.438 156.764 709.777 156.786 709.159 156.786C691.309 156.786 673.46 156.658 655.611 156.892C652.348 156.935 649.085 158.45 645.865 159.453C641.323 160.861 636.823 162.375 632.345 163.954C631.535 164.231 630.788 165.042 630.298 165.81C628.656 168.434 627.099 171.144 625.627 173.875C625.201 174.664 624.966 175.645 624.966 176.52C624.966 178.504 625.308 180.488 625.329 182.472C625.499 193.758 625.606 205.065 625.777 216.351C625.777 217.077 626.033 217.802 626.182 218.527H606.584C606.157 212.042 605.752 205.535 605.326 199.049C605.07 195.294 604.771 191.539 604.515 187.763C604.238 183.667 604.046 179.55 603.598 175.453C603.47 174.323 602.681 173.235 602.084 172.189C599.973 168.498 597.798 164.829 595.708 161.117C595.495 160.733 595.58 159.965 595.815 159.538C598.566 154.652 601.338 149.788 604.196 144.967C604.494 144.455 605.411 144.007 606.051 144.007C611.617 143.943 617.161 143.857 622.706 144.049C623.644 144.071 624.561 145.351 625.734 146.247C633.454 142.022 641.6 137.564 649.704 133.062C650.215 132.785 650.642 131.974 650.685 131.355C650.813 129.798 650.727 128.198 650.727 126.534H666.871V83.0117C664.951 83.0117 662.947 83.0971 660.963 82.9691C660.238 82.9264 659.343 82.6064 658.831 82.0944C654.011 77.3795 649.235 72.6433 644.564 67.8004C643.946 67.1603 643.626 65.987 643.626 65.0696C643.583 45.9754 643.583 26.8598 643.583 7.76561C643.583 6.99758 643.541 6.22954 643.541 5.48284C643.583 5.3335 643.605 5.20549 643.647 5.05615H721.165C721.207 5.20549 721.229 5.3335 721.271 5.48284V42.8819H715.002V33.6868H701.29V27.3932H714.852V11.3924H650.002V27.2438H694.785V33.5161H649.96C649.917 34.2628 649.874 34.8602 649.874 35.4789C649.874 44.5033 649.832 53.5491 649.917 62.5735C649.917 63.5975 650.429 64.8562 651.154 65.5816C654.545 69.0378 658.063 72.3659 661.582 75.6727C662.072 76.1208 662.904 76.4408 663.586 76.4408C676.147 76.4835 688.729 76.4835 701.29 76.4408C701.993 76.4408 702.868 76.0141 703.401 75.5021C706.983 72.0246 710.523 68.5044 713.999 64.8989C714.533 64.3442 714.916 63.3842 714.938 62.5948C715.044 58.2853 715.023 53.9757 715.044 49.6875H715.215L715.386 49.6449H721.25C721.25 53.4424 720.973 57.1759 721.314 60.8454C721.698 64.8989 720.461 67.843 717.347 70.5098C713.573 73.7527 710.182 77.4435 706.749 81.049C705.661 82.1797 704.574 82.7557 702.996 82.6277C701.354 82.4997 699.69 82.6064 697.771 82.6064V98.8631C697.664 98.9911 697.558 99.0978 697.451 99.2258H691.672V82.9264H673.439V126.363H691.544V105.626H697.451C697.558 105.754 697.664 105.861 697.771 105.989V126.534H714.085V132.849C722.508 137.436 730.804 141.98 739.398 146.652C740.144 143.153 742.852 144.028 745.134 144.028C749.57 143.985 754.027 143.985 758.463 144.071C759.124 144.071 760.062 144.54 760.382 145.073C763.239 149.895 766.033 154.759 768.741 159.666C769.04 160.199 768.869 161.223 768.528 161.821C766.396 165.725 764.05 169.522 761.981 173.469C761.278 174.792 760.958 176.392 760.83 177.885C760.318 183.475 759.955 189.086 759.55 194.676C759.38 197.15 759.252 199.604 759.124 202.079C758.846 207.583 758.569 213.066 758.292 218.57H738.694L738.737 218.527Z"
         fill="white"
