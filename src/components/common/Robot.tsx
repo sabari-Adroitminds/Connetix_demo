@@ -25,7 +25,6 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (isHovering && elementRef.current && containerRef.current) {
-        const containerRect = containerRef.current.getBoundingClientRect();
         const elementRect = elementRef.current.getBoundingClientRect();
         const elementCenterX = elementRect.left + elementRect.width / 2;
         const elementCenterY = elementRect.top + elementRect.height / 2;
