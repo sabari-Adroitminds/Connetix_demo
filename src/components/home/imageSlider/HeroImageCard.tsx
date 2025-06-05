@@ -50,8 +50,8 @@ export default function HeroImageCard({
         {/* Image Section */}
 
         <Image
-        width={280}
-        height={50}
+        width={1080}
+        height={720}
           src={image}
           alt={title}
           className="object-cover w-full lg:h-[851px] md:h-[500px] max-h-[80vh] h-[380px]  "
