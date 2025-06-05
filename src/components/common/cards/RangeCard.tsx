@@ -37,12 +37,12 @@ const RangeCard: FC<RangeCardProps> = ({
             diamondHoverColor
           )}
         />
-        <div className="relative top-5 md:top-0 md:w-[490px] md:h-[428px]  w-[289px] h-[283px] z-10 group-hover:scale-105 transition-transform duration-500">
+        <div className="relative  md:top-0 md:w-[490px] md:h-[428px]  w-[289px] h-[283px] z-10 group-hover:scale-105 transition-transform duration-500">
           <Image
             src={image}
             alt={title}
             fill
-            className="object-contain transform transition-transform duration-500"
+            className="object-contain  max-w-[490px] transform transition-transform duration-500"
             
           />
         </div>

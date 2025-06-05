@@ -25,7 +25,7 @@ const Slider: FC<SliderProps> = ({
   autoPlayInterval = 2000,
 }) => {
   const autoplayRef = useRef(
-    Autoplay({ delay: autoPlayInterval, stopOnInteraction: false })
+    Autoplay({ delay: autoPlayInterval, stopOnInteraction: true })
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -73,8 +73,8 @@ const Slider: FC<SliderProps> = ({
       </div>
 
       {/* Navigation Dots */}
-      <div className="flex relative my-2 justify-center ">
-        <div className="absolute w-full lg:-left-100 2xl:-left-135 -bottom-0.5 transform flex items-center justify-center  ">
+      <div className="flex relative  my-2 justify-center  ">
+        <div className="relative  bottom-5  md:left-15 lg:left-10   transform 3xl:w-[1600px] 2xl:w-[1280px] xl:w-[1080px] lg:w-[980px] md:w-[600px] flex items-center justify-start">
      
           {buttonBorderColors.map((_, index) => (
             <button

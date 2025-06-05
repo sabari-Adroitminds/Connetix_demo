@@ -22,9 +22,9 @@ export default function HeroImageCard({
 }: HeroImageCardProps) {
   return (
     <div className={clsx(bgColorClass, '3xl:w-[1600px] 2xl:w-[1280px] xl:w-[1080px] lg:w-[980px] md:w-[600px] rounded-xl h-full')}>
-      <div className="flex  flex-col-reverse lg:flex-row items-center justify-around md:justify-between ">
+      <div className="  flex  flex-col-reverse lg:flex-row items-center justify-around md:justify-between ">
         {/* Text Section */}
-        <div className="flex xl:flex-4/12 items-center justify-center md:w-[100%] w-[366px] max-h-[80vh] h-[273px] p-[30px] align-center ">
+        <div className="flex xl:flex-4/12 items-center justify-center md:w-[550px] w-[366px] max-h-[80vh] h-[273px] p-[30px] align-center ">
           <div className="lg:w-[421px] w-full flex flex-col items-center lg:items-start justify-center px-4 gap-6 md:text-left mb-8 md:mb-0">
             {subtitle && (
               <PreTitle className='hidden lg:flex' title={subtitle} color={subtitleColorClass} />
@@ -41,7 +41,7 @@ export default function HeroImageCard({
             </p>
             <Button
               variant={buttonColorClass}
-              className='h-[50px] w-[224px] min-w-[150px]'
+              className='h-[50px] w-fit text-[18px]  min-w-[150px] px-4'
             >
               {buttonText}
             </Button>
