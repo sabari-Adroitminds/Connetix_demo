@@ -70,7 +70,7 @@ const WhyConnetix = () => {
           </motion.div>
         </div>
         <div className="relative flex-1 flex items-center justify-center hover:cursor-grab">
-          <IconLine className="absolute top-[160px]  hidden lg:block" />
+          <IconLine className="absolute top-[160px]  hidden min-[1638px]:block" />
           <BigBlueTile
             className="
               z-10
@@ -80,11 +80,11 @@ const WhyConnetix = () => {
             "
             rotateAngle={rotateAngle}
           />
-          <IconLine className="absolute hidden lg:block bottom-[200px]" />
+          <IconLine className="absolute hidden min-[1638px]:block bottom-[200px]" />
 
         </div>
 
-        <div className="hidden max-w-[275px] lg:flex flex-col h-[510px] justify-between">
+        <div className="hidden  lg:flex flex-col h-[510px] justify-between">
           <motion.div
             onMouseEnter={() => setAngle(150)}
             onMouseLeave={() => setAngle()}
@@ -97,7 +97,7 @@ const WhyConnetix = () => {
               <IconBevel />
               <h4 className="!font-bold">Unique Bevel Design</h4>
             </div>
-            <p className="text-navy opacity-50 font-bold text-base">
+            <p className="text-navy opacity-50 font-bold text-base max-w-[275px]">
               Provides added durability and clearer tiles for beautiful light
               refractions.
             </p>
@@ -109,7 +109,7 @@ const WhyConnetix = () => {
             initial={{ opacity: 0.3 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className=" flex flex-col gap-[26px] hover:cursor-pointer"
+            className=" flex flex-col gap-[26px] hover:cursor-pointer max-w-[275px]"
           >
             <div className=" flex items-center gap-5">
               <IconSafe />

@@ -27,7 +27,7 @@ const AwardWinning: FC = () => {
         className="overflow-x-auto hide-scrollbar"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
         variants={{
           hidden: {},
           visible: {},
