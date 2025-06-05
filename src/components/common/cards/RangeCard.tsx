@@ -49,9 +49,9 @@ const RangeCard: FC<RangeCardProps> = ({
             
           />
         </div>
-        <h2 className="text-[24px]/[30px] font-light text-font/20 mt-6 z-10 tracking-[-0.25px]">
+        <p className="text-[28px]/[30px] font-light text-navy mt-6 z-10 tracking-[-0.25px]">
           {title}
-        </h2>
+        </p>
         <p className="text-[16px]/[22px] text-center text-gray-600 mt-2 z-10 w-fit max-w-[418px] font-extralight">{description}</p>
         <Button
           className={clsx(
