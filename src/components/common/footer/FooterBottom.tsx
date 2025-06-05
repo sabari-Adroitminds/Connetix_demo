@@ -6,7 +6,7 @@ import TermsAndCondition from "./TermsAndCondition";
 
 const FooterBottom: React.FC = () => {
     return (
-        <div className="hidden lg:flex max-w-[390px] flex-col ml-8 mt-10 lg:ml-0 text-sm text-gray-300">
+        <div className="hidden lg:flex max-w-[390px] flex-col ml-8 -mt-5 lg:ml-0 text-sm text-gray-300">
             <div>
             <p className="font-semibold mb-3 text-white">Follow Connetix</p>
             <SocialIcons />
