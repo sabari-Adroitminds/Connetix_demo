@@ -49,7 +49,7 @@ const RangeCard: FC<RangeCardProps> = ({
             
           />
         </div>
-        <p className="text-[28px]/[30px] font-light text-navy mt-6 z-10 tracking-[-0.25px]">
+        <p className="text-[28px]/[30px] font-[400] text-navy mt-6 z-10 tracking-[-0.25px]">
           {title}
         </p>
         <p className="text-[16px]/[22px] text-center text-gray-600 mt-2 z-10 w-fit max-w-[418px] font-extralight">{description}</p>
