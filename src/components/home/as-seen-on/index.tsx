@@ -21,7 +21,7 @@ const AsSeenOn = () => {
               <Image
                 src={`/images/asseenon/${num}.png`}
                 alt={`As seen on logo ${num}`}
-                className="w-[83px] h-[50px] object-contain grayscale opacity-55 hover:opacity-100 transition-opacity duration-300 ml-[112px]"
+                className="w-[83px] h-[50px] object-contain grayscale opacity-55 hover:opacity-100 transition-opacity duration-300 ml-[37px] lg:ml-[112px]"
                 width={120}
                 height={60}
                 loading="lazy"
