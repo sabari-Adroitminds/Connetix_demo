@@ -2,12 +2,16 @@
 
 import IconDownArrow from '@/components/icons/IconDownArrow';
 import clsx from 'clsx';
-import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
+import FLagAu from './flags/Au';
+import FlagUs from './flags/Us';
+import FlagIn from './flags/In';
+import FlagGb from './flags/Gb';
 
 type Country = {
     code: string;
     name: string;
+    flag:React.ReactNode
 };
 
 interface ICountrySelector {
@@ -16,10 +20,10 @@ interface ICountrySelector {
 }
 
 const countries: Country[] = [
-    { code: 'au', name: 'AUS' },
-    { code: 'us', name: 'USA' },
-    { code: 'in', name: 'IND' },
-    { code: 'gb', name: 'UK' },
+    { code: 'au', name: 'AUS' ,flag:<FLagAu/>},
+    { code: 'us', name: 'USA', flag: <FlagUs /> },
+    { code: 'in', name: 'IND', flag: <FlagIn /> },
+    { code: 'gb', name: 'UK', flag: <FlagGb /> },
 ];
 
 const CountrySelector: React.FC<ICountrySelector> = ({ className, dropdownPosition }) => {
@@ -54,13 +58,7 @@ const CountrySelector: React.FC<ICountrySelector> = ({ className, dropdownPositi
             {/* Trigger */}
             <div className="flex items-center gap-2 cursor-pointer" onClick={toggleDropdown}>
                 <span className="text-xs">Shipping to</span>
-                <Image
-                    width={12}
-                    height={12}
-                    src={`https://flagcdn.com/w40/${selectedCountry.code}.png`}
-                    alt={selectedCountry.name}
-                    className="w-4 h-4 rounded-full"
-                />
+                {selectedCountry.flag}
                 <span>{selectedCountry.name}</span>
                 <IconDownArrow />
             </div>
@@ -80,13 +78,7 @@ const CountrySelector: React.FC<ICountrySelector> = ({ className, dropdownPositi
                             onClick={() => selectCountry(country)}
                             className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 cursor-pointer"
                         >
-                            <Image
-                                width={16}
-                                height={16}
-                                src={`https://flagcdn.com/w40/${country.code}.png`}
-                                alt={country.name}
-                                className="w-4 h-4 rounded-full"
-                            />
+                            {country.flag}
                             <span>{country.name}</span>
                         </li>
                     ))}

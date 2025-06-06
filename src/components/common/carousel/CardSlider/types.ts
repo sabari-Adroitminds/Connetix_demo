@@ -37,4 +37,5 @@ export interface CarouselScrollbarProps extends ComponentPropsWithoutRef<'div'> 
   label?: string;
   buttonColors?: string;
   scrollbarColors?: string;
+  onlyButton?:boolean;
 }

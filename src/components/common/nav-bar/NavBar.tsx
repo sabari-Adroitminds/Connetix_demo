@@ -8,7 +8,7 @@ import CartButton from './components/CartButton'
 
 const NavBar = () => {
   return (
-    <div className='w-full h-[55px] lg:h-[82px] flex items-center justify-between p-4 '>
+    <div className='w-full h-[55px] lg:h-[82px] flex items-center justify-between p-4 shadow-purple-soft  mb-4'>
       <MobileMenu/>
       <Image src={logo} alt="Logo" className='h-[28px] w-[170px] lg:h-[40px] lg:w-[238px]' />
       <Navigation />

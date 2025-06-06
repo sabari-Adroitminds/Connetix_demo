@@ -1,7 +1,7 @@
 export const connetixPacks = [
      {
     image: "/images/products/Pastel Tiles.png",
-    imageStyle: "top-4",
+    imageStyle: " ",
     title: "Pastel Tiles",
     description:
       "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
@@ -15,7 +15,7 @@ export const connetixPacks = [
 
   {
     image: "/images/products/Roads_Transport.png",
-    imageStyle: "-top-3",
+    imageStyle: "-top-8 !max-w-[370px]",
     title: "Roads & Transport",
     description:
       "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
@@ -29,7 +29,7 @@ export const connetixPacks = [
  
   {
     image: "/images/products/Rainbow Tiles.png",
-    imageStyle: "",
+    imageStyle: "-top-4 ",
     title: "Rainbow Tiles",
     description:
       "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
@@ -42,7 +42,7 @@ export const connetixPacks = [
   },
     {
     image: "/images/products/Clear Tiles.png",
-    imageStyle: "-top-1",
+    imageStyle: "-top-4",
     title: "Clear Tiles",
     description:
       "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",
@@ -55,7 +55,7 @@ export const connetixPacks = [
   },
   {
     image: "/images/products/Ball Runs.png",
-    imageStyle: "-top-1",
+    imageStyle: "-top-4",
     title: "Ball Runs",
     description:
       "Explore motion, gravity, cause & effect, plus so much more as you build and re-build your very own ball run designs!",

@@ -45,14 +45,14 @@ const RangeCard: FC<RangeCardProps> = ({
             alt={title}
             width={490}
             height={428}
-            className={clsx("object-contain relative   md:w-[400px] md:h-[428px]  w-[289px] h-[283px] transform transition-transform duration-500", imageStyle)}
+            className={clsx("object-contain relative  md:w-[400px] md:h-[428px]  w-[289px] h-[283px] transform transition-transform duration-500", imageStyle)}
             
           />
         </div>
-        <p className="text-[28px]/[30px] font-[400] text-navy mt-6 z-10 tracking-[-0.25px]">
+        <p className="text-[28px]/[30px] font-[600] text-navy mt-6 z-10 tracking-[-0.25px]">
           {title}
         </p>
-        <p className="text-[16px]/[22px] text-center text-gray-600 mt-2 z-10 w-fit max-w-[418px] font-extralight">{description}</p>
+        <p className="text-[16px]/[22px] text-center text-gray-600 mt-2 z-10 w-fit max-w-[418px] font-[300]">{description}</p>
         <Button
           className={clsx(
             "mt-6 font-semibold py-2 px-4 rounded-full transition-colors z-10 w-[200px]",

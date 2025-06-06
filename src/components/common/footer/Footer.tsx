@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
           
             <div className=" mx-auto lg:px-6 py-10">
                 <FooterTop />
-                <div className="flex  flex-col md:flex-row justify-between items-center gap-5 mt-10">
-                    <div className="hidden lg:grid grid-cols-2 xl:grid-cols-4 xl:gap-30 gap-15  text-sm mt-10">
+                    <div className="flex  flex-col xl:flex-row items-start xl:justify-between  w-full  mt-10 gap-y-10 gap-4">
+                    <div className="hidden lg:flex items-start justify-between w-full xl:max-w-[60%] text-sm ">
 
                         <FooterSection
                             title="Shop"
@@ -56,10 +56,10 @@ const Footer: React.FC = () => {
                             ]}
                         />
 
-
+                           
                     </div>
-                  
-                    <FooterBottom />
+                        <FooterBottom />
+                
                 </div>
                 <NavMenuAccordion borderColor="white/10" itemTextColor={'white/50'} iconColor="rgba(255, 255, 255, 0.5)" textColor="white" className="lg:hidden block w-[90%] px-2 md:max-w-[80%] mx-auto" />
                 <TermsAndCondition className="lg:hidden text-[14px] text-white/70 w-[90%] px-2 md:max-w-[80%] mx-auto"/>
