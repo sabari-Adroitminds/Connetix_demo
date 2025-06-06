@@ -1,10 +1,10 @@
 "use client";
 
 import { clsx } from "clsx";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { FC, useCallback, useEffect, useState } from "react";
 import { CarouselScrollbarProps } from "./types";
 import { useCarousel } from "./Context";
+import IconDownArrow from "@/components/icons/IconDownArrow";
 
 const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
   className,
@@ -14,6 +14,7 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
   label = "Carousel scrollbar",
   buttonColors = "bg-white",
   scrollbarColors = "bg-primary",
+  onlyButton = false,
   ...props
 }) => {
   const { api, scrollPrev, scrollNext, canScrollPrev, canScrollNext } =
@@ -86,6 +87,7 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
       <button
         className={clsx(
           "cursor-pointer relative w-[40px] h-[40px] align-middle rotate-45 border-[1px] border-font rounded-[10%]",
+          onlyButton? "absolute -top-100 -left-10 z-50":'',
           buttonColors
         )}
         disabled={!canScrollPrev}
@@ -94,8 +96,8 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
         type="button"
         aria-label={previousLabel}
       >
-        <div className="absolute left-2 top-0.5 w-full h-full -rotate-45">
-          <ArrowLeft className="h-6 w-6 cursor-pointer" strokeWidth={1.5} />
+        <div className="flex items-center justify-center  w-full h-full rotate-45">
+          <IconDownArrow className="h-8 w-8 cursor-pointer mt-1"  />
         </div>
       </button>
       <div
@@ -104,6 +106,7 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
           !canScrollPrev && !canScrollNext && "pointer-events-none invisible"
         )}
       >
+      { !onlyButton && <>
         <input
           aria-label={label}
           aria-orientation="horizontal"
@@ -140,10 +143,12 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
             left: `${scrollbarPosition.left}%`,
           }}
         />
+        </>}
       </div>
       <button
         className={clsx(
-          "cursor-pointer relative w-[40px] h-[40px] align-middle rotate-45 border-[1px] border-font rounded-[10%]",
+          "cursor-pointer relative w-[40px] h-[40px] align-middle -rotate-45 border-[1px] border-font rounded-[10%]",
+          onlyButton ? "absolute -top-100 -right-10 z-50" : '',
           buttonColors
         )}
         disabled={!canScrollNext}
@@ -152,8 +157,8 @@ const CarouselScrollbar: FC<CarouselScrollbarProps> = ({
         type="button"
         aria-label={nextLabel}
       >
-        <div className="absolute right-2 top-2 -rotate-45">
-          <ArrowRight className="h-6 w-6 cursor-pointer" strokeWidth={1.5} />
+        <div className="flex items-center justify-center  w-full h-full -rotate-45 ">
+          <IconDownArrow className="h-8 w-8 cursor-pointer mb-1" />
         </div>
       </button>
     </div>

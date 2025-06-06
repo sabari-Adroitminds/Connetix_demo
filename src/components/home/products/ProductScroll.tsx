@@ -1,12 +1,12 @@
 import RangeCard from '@/components/common/cards/RangeCard'
-import { Carousel, CarouselContent } from '@/components/common/carousel/CardSlider'
+import { Carousel, CarouselContent, CarouselScrollbar } from '@/components/common/carousel/CardSlider'
 import React from 'react'
 import { connetixPacks } from './constant'
 const ProductScroll = () => {
     return (
         <>
             <Carousel>
-                <CarouselContent className='gap-6'>
+                <CarouselContent className='gap-6 px-20'>
                     {connetixPacks.map((pack, index) => (
                         <RangeCard
                             key={index}
@@ -23,7 +23,11 @@ const ProductScroll = () => {
                         />
                     ))}
                 </CarouselContent>
+                <div>
+                <CarouselScrollbar onlyButton className='md:hidden' />
+                </div>
             </Carousel>
+           
         </>
     )
 }

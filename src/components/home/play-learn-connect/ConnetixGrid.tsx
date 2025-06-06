@@ -12,7 +12,7 @@ const ConnetixGrid: React.FC<ConnetixGridProps> = ({ videoSrc, images, className
     return (
         <div
             className={clsx(
-                'grid grid-flow-col grid-rows-3 gap-6 md:gap-2 max-w-[748px] m-auto justify-center lg:justify-between h-full',
+                'grid grid-flow-col grid-rows-3 gap-6 md:gap-4 max-w-[748px] m-auto justify-center lg:justify-between h-full',
                 className
             )}
         >

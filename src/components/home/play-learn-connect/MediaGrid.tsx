@@ -4,7 +4,7 @@ import PromoBox from './PromoBox'
 
 const MediaGrid = () => {
     return (
-        <div className='grid lg:grid-cols-2 grid-cols-1 gap-2 justify-center items-center p-2'>
+        <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 justify-center items-center p-2'>
             {/* Grid 1 */}
             <ConnetixGrid
                 videoSrc="/videos/play-learn-connect/play-learn-connect(1).mp4"
