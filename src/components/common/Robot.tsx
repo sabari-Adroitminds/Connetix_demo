@@ -13,72 +13,72 @@ const Robot: React.FC<IRobotProps> = ({ containerRef, ...props }) => {
   const [stopAnimation, setStopAnimation] = React.useState<boolean>(false);
   const elementRef = React.useRef<SVGPathElement | null>(null);
 
-  React.useEffect(() => {
-    let animationFrame: number | undefined;
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let isHovering = false;
+  // React.useEffect(() => {
+  //   let animationFrame: number | undefined;
+  //   let targetX = 0;
+  //   let targetY = 0;
+  //   let currentX = 0;
+  //   let currentY = 0;
+  //   let isHovering = false;
 
-    const maxDistance = 100;
+  //   const maxDistance = 100;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      if (isHovering && elementRef.current && containerRef.current) {
-        const elementRect = elementRef.current.getBoundingClientRect();
-        const elementCenterX = elementRect.left + elementRect.width / 2;
-        const elementCenterY = elementRect.top + elementRect.height / 2;
-        const relativeX = e.clientX - elementCenterX;
-        const relativeY = e.clientY - elementCenterY;
-        targetX = Math.max(-maxDistance, Math.min(maxDistance, relativeX));
-        targetY = Math.max(-maxDistance, Math.min(maxDistance, relativeY));
-      }
-    };
+  //   const handleMouseMove = (e: MouseEvent) => {
+  //     if (isHovering && elementRef.current && containerRef.current) {
+  //       const elementRect = elementRef.current.getBoundingClientRect();
+  //       const elementCenterX = elementRect.left + elementRect.width / 2;
+  //       const elementCenterY = elementRect.top + elementRect.height / 2;
+  //       const relativeX = e.clientX - elementCenterX;
+  //       const relativeY = e.clientY - elementCenterY;
+  //       targetX = Math.max(-maxDistance, Math.min(maxDistance, relativeX));
+  //       targetY = Math.max(-maxDistance, Math.min(maxDistance, relativeY));
+  //     }
+  //   };
 
-    const handleMouseEnter = () => {
-      setStopAnimation(true);
-      isHovering = true;
-      setClawDown(true);
-    };
+  //   const handleMouseEnter = () => {
+  //     setStopAnimation(true);
+  //     isHovering = true;
+  //     setClawDown(true);
+  //   };
 
-    const handleMouseLeave = () => {
-      setStopAnimation(false);
-      isHovering = false;
-      targetX = 0;
-      targetY = 0;
-      if (elementRef.current) {
-        elementRef.current.style.transform = "";
-      }
-    };
+  //   const handleMouseLeave = () => {
+  //     setStopAnimation(false);
+  //     isHovering = false;
+  //     targetX = 0;
+  //     targetY = 0;
+  //     if (elementRef.current) {
+  //       elementRef.current.style.transform = "";
+  //     }
+  //   };
 
-    const animate = () => {
-      if (elementRef.current && isHovering) {
-        currentX += (targetX - currentX) * 0.15;
-        currentY += (targetY - currentY) * 0.15;
-        elementRef.current.style.transform = `translate(${currentX}px, ${currentY}px)`;
-      }
-      animationFrame = requestAnimationFrame(animate);
-    };
+  //   const animate = () => {
+  //     if (elementRef.current && isHovering) {
+  //       currentX += (targetX - currentX) * 0.15;
+  //       currentY += (targetY - currentY) * 0.15;
+  //       elementRef.current.style.transform = `translate(${currentX}px, ${currentY}px)`;
+  //     }
+  //     animationFrame = requestAnimationFrame(animate);
+  //   };
 
-    animate();
+  //   animate();
 
-    if (containerRef.current) {
-      containerRef.current.addEventListener("mouseenter", handleMouseEnter);
-      containerRef.current.addEventListener("mouseleave", handleMouseLeave);
-      containerRef.current.addEventListener("mousemove", handleMouseMove);
-    }
+  //   if (containerRef.current) {
+  //     containerRef.current.addEventListener("mouseenter", handleMouseEnter);
+  //     containerRef.current.addEventListener("mouseleave", handleMouseLeave);
+  //     containerRef.current.addEventListener("mousemove", handleMouseMove);
+  //   }
 
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
-        containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
-        containerRef.current.removeEventListener("mousemove", handleMouseMove);
-      }
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [containerRef]);
+  //   return () => {
+  //     if (containerRef.current) {
+  //       containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
+  //       containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
+  //       containerRef.current.removeEventListener("mousemove", handleMouseMove);
+  //     }
+  //     if (animationFrame) {
+  //       cancelAnimationFrame(animationFrame);
+  //     }
+  //   };
+  // }, [containerRef]);
 
   return (
     <svg

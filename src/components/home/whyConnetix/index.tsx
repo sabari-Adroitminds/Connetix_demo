@@ -70,7 +70,9 @@ const WhyConnetix = () => {
           </motion.div>
         </div>
         <div className="relative flex-1 flex items-center justify-center hover:cursor-grab">
-          <IconLine className="absolute top-[160px]  hidden min-[1638px]:block" />
+          <IconLine className="absolute top-[160px]  hidden 
+          [@media_(min-width:950px)_and_(max-width:1690px)]:w-[80%]   
+          lg:block" />
           <BigBlueTile
             className="
               z-10
@@ -80,7 +82,9 @@ const WhyConnetix = () => {
             "
             rotateAngle={rotateAngle}
           />
-          <IconLine className="absolute hidden min-[1638px]:block bottom-[200px]" />
+          <IconLine className="absolute hidden 
+            [@media_(min-width:950px)_and_(max-width:1690px)]:w-[80%]      
+           lg:block bottom-[200px]" />
 
         </div>
 

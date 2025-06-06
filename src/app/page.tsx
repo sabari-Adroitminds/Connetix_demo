@@ -17,11 +17,11 @@ export default function Home() {
       <Products/>
       </Suspense>
       <Suspense fallback={<p>Loading feed...</p>}>
+        <AwardWinning />
+      </Suspense>
+      <Suspense fallback={<p>Loading feed...</p>}>
       <EducationalToy />
       </Suspense>
-        <Suspense fallback={<p>Loading feed...</p>}>
-      <AwardWinning />
-        </Suspense>
           <Suspense fallback={<p>Loading feed...</p>}>
       <WhyConnetix />
           </Suspense>

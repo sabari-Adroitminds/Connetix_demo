@@ -5,13 +5,13 @@ import Input from "@/components/common/inputs/Input";
 import Radio from "@/components/common/inputs/Radio";
 import Toggle from "@/components/common/inputs/Toggle";
 import SortBySelect from "@/components/common/inputs/Select";
-import SignUp from "@/components/common/SignUp";
 import React, { useState } from "react";
 import ImageGallery from "@/components/common/ImageGallery";
 import AwardWinning from "@/components/home/awards";
 import EducationalToy from "@/components/common/EducationalToy";
 import PreTitle from "@/components/common/PreTitle";
 import HomeSignUp from "@/components/home/HomeSignUp";
+import AsSeenOn from "@/components/home/as-seen-on";
 
 const Test = () => {
   const [isChecked1, setIsChecked1] = useState(false);
@@ -92,7 +92,7 @@ const Test = () => {
         ]}
       />
 
-      <SignUp />
+      {/* <SignUp /> */}
       <BecomeRetailer />
 
       <div className="mt-44">
@@ -117,6 +117,8 @@ const Test = () => {
 
       <PreTitle title="Lorem ipsum dolor" color={""} />
       <HomeSignUp />
+
+      <AsSeenOn />
     </div>
   );
 };
