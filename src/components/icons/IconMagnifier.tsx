@@ -1,4 +1,4 @@
-import { IIconProps } from "@/types/intetrfaces";
+import { IIconProps } from "@/types/interfaces";
 import * as React from "react";
 
 const IconMagnifier:React.FC<IIconProps> = (props) => (
