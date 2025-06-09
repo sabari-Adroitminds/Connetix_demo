@@ -12,7 +12,7 @@ export default function TopBar() {
 
     return (
         <div className="w-full bg-off-white-2 h-[40px] flex items-center justify-between pr-1 text-sm font-medium">
-            <div className="flex gap-4">
+            <div className="flex">
                 {tabs.map((tab) => (
                     <button
                         key={tab}

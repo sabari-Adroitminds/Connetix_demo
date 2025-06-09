@@ -1,4 +1,4 @@
-import { IIconProps } from "@/types/intetrfaces";
+import { IIconProps } from "@/types/interfaces";
 import * as React from "react";
 
 const IconPromoBox:React.FC<IIconProps> = (props) => (

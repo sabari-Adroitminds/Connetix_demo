@@ -1,6 +1,6 @@
 import * as React from "react";
 import {motion} from "motion/react"
-import { IIconProps } from "@/types/intetrfaces";
+import { IIconProps } from "@/types/interfaces";
 
 interface BigBlueTileProps extends IIconProps {
  rotateAngle: number
