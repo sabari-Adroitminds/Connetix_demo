@@ -26,9 +26,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Left Section */}
             <div className={" flex basis-2/2 lg:basis-1/2 xl:basis-1/3 items-center justify-center rounded-2xl lg:rounded-r-[0px] " + `${bgColor}`}>
                 <div className="lg:max-w-[461px] max-w-full  mx-auto p-6 flex flex-col items-center justify-center">
-                    <p className="lg:text-[60px]/[70px] text-[32px]/[40px]  text-navy mb-4">{title}</p>
-                    <p className="hidden lg:block text-[16px]/[26px] lg:max-w-[445px] font-[300] text-navy/80 mb-4">{description}</p>
-                    <p className="lg:hidden text-[16px]/[26px] lg:max-w-[445px] font-[300] text-navy/80 mb-4">{mobileDescription}</p>
+                    <p className="lg:text-[60px]/[70px] text-[32px]/[40px] font-[600]  text-navy mb-4">{title}</p>
+                    <p className="hidden lg:block text-[16px]/[26px] lg:max-w-[445px] font-[500] text-navy/80 mb-4">{description}</p>
+                    <p className="lg:hidden text-[16px]/[26px] lg:max-w-[445px] font-[500] text-navy/80 mb-4">{mobileDescription}</p>
 
                 </div>
             </div>

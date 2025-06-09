@@ -29,10 +29,10 @@ const FilterTabs: React.FC = () => {
                     className={clsx(
                         'lg:pb-2 text-[16px] font-[200]  transition-colors min-w-fit',
                         activeTab === tab.value
-                            ? 'text-navy/80 lg:border-b-2 border-yellow bg-yellow px-4 rounded-[100px] min-w-[100px] h-[37px] lg:h-auto lg:bg-white lg:rounded-[0px]'
+                            ? 'text-navy  lg:border-b-2 border-yellow bg-yellow px-4 rounded-[100px] min-w-[100px] h-[37px] lg:h-auto lg:bg-white lg:rounded-[0px]'
                             : 'text-gray-400 hover:text-black'
                         ,
-                        activeTab === tab.value ? 'font-medium' : ''
+                        activeTab === tab.value ? 'font-[600]' : ''
                     )}
                 >
                     {tab.label}
