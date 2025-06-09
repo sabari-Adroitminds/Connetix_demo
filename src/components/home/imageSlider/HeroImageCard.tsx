@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Button } from '@/components/ui/button'
 import PreTitle from '@/components/common/PreTitle'
-import { HeroImageCardProps } from '@/types/intetrfaces'
+import { HeroImageCardProps } from '@/types/interfaces'
 import Image from 'next/image'
 
 

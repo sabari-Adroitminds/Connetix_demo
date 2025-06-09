@@ -3,7 +3,7 @@ import SliderItem from '@/components/common/carousel/Slider/SliderItem'
 import React from 'react'
 
 import HeroImageCard from './HeroImageCard';
-import { HeroImageCardProps } from '@/types/intetrfaces';
+import { HeroImageCardProps } from '@/types/interfaces';
 const items: HeroImageCardProps[] = [
     {
         title: 'Where play & learning connect',

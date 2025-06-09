@@ -1,4 +1,4 @@
-import { IIconProps } from "@/types/intetrfaces";
+import { IIconProps } from "@/types/interfaces";
 import * as React from "react";
 const TileLightGreenSquareWithPlus:React.FC<IIconProps> = (props) => (
     <svg
